@@ -4,20 +4,41 @@
 #include <sstream>
 using namespace std;
 
+// int compressLength(char A[], int n) {
+//     int char x[i];
+//     int length = 0;
+//     int count = 0;
+//     for (int i = 0; i < n; i++) {
+//         if (A[i] != *x) {
+//             if (count > 0) {
+//                 // add length of one character and number of sequence: 1 + (count / 10 + 1)
+//                 length += count / 10 + 2;
+//             }
+//             *x = A[i];
+//             count = 1;
+//         } else {
+//             count++;
+//         }
+
+//         if (i = n - 1) {
+//             length += count / 10 + 2;
+//         }
+//     }
+//     return length;
+// }
+
 string compress(char A[], int n)
 {
     char x[1];
     int num = 0;
     stringstream ss;
-    int i = 0;
-    while (i < n)
+    for (int i = 0; i < n; i++)
     {
         if (A[i] != *x)
         {
             if (num > 0)
             {
-                ss << *x;
-                ss << num;
+                ss << *x << num;
             }
             *x = A[i];
             num = 1;
@@ -29,10 +50,8 @@ string compress(char A[], int n)
 
         if (i == n - 1)
         {
-            ss << *x;
-            ss << num;
+            ss << *x << num;
         }
-        i++;
     }
     return ss.str();
 }
