@@ -12,6 +12,13 @@ This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ```
 
+When it is necessary to upgrade compiler, following commands are example of using homebrew.
+
+```bash
+brew upgrade gcc
+source ~/.bash_profile
+```
+
 ## How to compile
 
 ```bash
