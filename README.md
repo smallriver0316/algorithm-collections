@@ -2,12 +2,12 @@
 
 Collection of programs to study algorithm
 
-## environment
+## Environment
 
 ```bash
 $ g++ --version
-g++ (Homebrew GCC 5.5.0_7) 5.5.0
-Copyright (C) 2015 Free Software Foundation, Inc.
+g++ (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
+Copyright (C) 2019 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ```
@@ -25,3 +25,8 @@ g++ -o test.exe test.cc
 ./a.out
 ./test.exe
 ```
+
+## Reference
+
+- Cracking the Coding Interview by Gayle Laakmann Mcdowell
+- プログラミングコンテスト攻略のためのアルゴリズムとデータ構造

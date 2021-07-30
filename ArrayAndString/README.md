@@ -10,7 +10,7 @@ If the result of compression is not shorter than an original string,
 this codes will return the original string.
 
 ```bash
-$ g++ string_compression.cc
+$ g++ string_compression.cpp
 $ ./a.out
 11 # length of original string
 aabcccccaaa
