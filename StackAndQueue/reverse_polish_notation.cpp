@@ -1,0 +1,78 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Stack
+{
+public:
+    int top, S[200];
+
+    Stack()
+    {
+        top = 0;
+    }
+
+    void push(int x)
+    {
+        S[++top] = x;
+    }
+
+    int pop()
+    {
+        top--;
+        int x = S[top + 1];
+        return x;
+    }
+
+    bool isEmpty()
+    {
+        if (top == 0)
+            return true;
+        else
+            return false;
+    }
+
+    bool isFull()
+    {
+        if (top == 199)
+            return true;
+        else
+            return false;
+    }
+};
+
+int main()
+{
+    int a, b;
+    char s[100];
+    Stack stack;
+
+    while (scanf("%s", s) != EOF)
+    {
+        if (s[0] == '+')
+        {
+            a = stack.pop();
+            b = stack.pop();
+            stack.push(a + b);
+        }
+        else if (s[0] == '-')
+        {
+            a = stack.pop();
+            b = stack.pop();
+            stack.push(b - a);
+        }
+        else if (s[0] == '*')
+        {
+            a = stack.pop();
+            b = stack.pop();
+            stack.push(a * b);
+        }
+        else
+        {
+            stack.push(atoi(s));
+        }
+    }
+
+    printf("%d\n", stack.pop());
+    return 0;
+}
