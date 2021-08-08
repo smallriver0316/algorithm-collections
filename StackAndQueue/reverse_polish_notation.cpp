@@ -43,33 +43,43 @@ public:
 
 int main()
 {
-    int a, b;
+    int a, b, c;
     char s[100];
     Stack stack;
 
-    while (scanf("%s", s) != EOF)
+    while (1)
     {
-        if (s[0] == '+')
+        if (scanf("%s", s) == 1)
         {
-            a = stack.pop();
-            b = stack.pop();
-            stack.push(a + b);
+            if (s[0] == '+')
+            {
+                a = stack.pop();
+                b = stack.pop();
+                stack.push(a + b);
+            }
+            else if (s[0] == '-')
+            {
+                a = stack.pop();
+                b = stack.pop();
+                stack.push(b - a);
+            }
+            else if (s[0] == '*')
+            {
+                a = stack.pop();
+                b = stack.pop();
+                stack.push(a * b);
+            }
+            else
+            {
+                stack.push(atoi(s));
+            }
         }
-        else if (s[0] == '-')
+
+        // distinguish EOF
+        c = getchar();
+        if (c == '\n' || c == '\0')
         {
-            a = stack.pop();
-            b = stack.pop();
-            stack.push(b - a);
-        }
-        else if (s[0] == '*')
-        {
-            a = stack.pop();
-            b = stack.pop();
-            stack.push(a * b);
-        }
-        else
-        {
-            stack.push(atoi(s));
+            break;
         }
     }
 
