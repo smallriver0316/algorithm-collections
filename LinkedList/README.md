@@ -14,7 +14,10 @@ The double linked list accepts following commands.
 ```bash
 $ g++ double_linked_list.cpp
 $ ./a.out
-7 # the number of input commands
+# input
+# the number of input commands
+7
+# commands
 insert 5
 insert 2
 insert 3
