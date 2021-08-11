@@ -4,9 +4,10 @@ using namespace std;
 
 class Stack
 {
-public:
+private:
     int top, S[200];
 
+public:
     Stack()
     {
         top = 0;
