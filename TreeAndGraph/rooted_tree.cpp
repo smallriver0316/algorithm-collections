@@ -100,7 +100,10 @@ int main()
     for (int i = 0; i < n; i++)
     {
         if (T[i].p == NIL)
+        {
             right = i;
+            break;
+        }
     }
 
     // set depth
