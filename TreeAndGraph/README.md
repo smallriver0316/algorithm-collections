@@ -77,3 +77,43 @@ node 6: parent = 5, sibling = 6, degree = 0, depth = 3, height = 0, leaf
 node 7: parent = 5, sibling = 7, degree = 0, depth = 3, height = 0, leaf
 node 8: parent = 4, sibling = 8, degree = 0, depth = 2, height = 0, leaf
 ```
+
+## Tree Walk
+
+It is implementation of tree walk, output 3 patterns of walking binary-tree.
+
+1. Preorder Tree Walk
+
+   Walk as root->left->right
+
+2. Inorder Tree Walk
+
+   Walk as left->root->right
+
+3. Postorder Tree Walk
+
+   Walk as left->right->root
+
+```bash
+$ g++ tree_walk.cpp
+$ ./a.out
+# initial input is number of nodes
+9
+# each node information; ID, left child, right child
+0 1 4
+1 2 3
+2 -1 -1
+3 -1 -1
+4 5 8
+5 6 7
+6 -1 -1
+7 -1 -1
+8 -1 -1
+# result
+Preorder
+0 1 2 3 4 5 6 7 8
+Inorder
+2 1 3 0 6 5 7 4 8
+Postorder
+2 3 1 6 7 5 8 4 0
+```
