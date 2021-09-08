@@ -12,7 +12,10 @@ this codes will return the original string.
 ```bash
 $ g++ string_compression.cpp
 $ ./a.out
-11 # length of original string
+# input
+# length of original string
+11
+# original string
 aabcccccaaa
 # result
 a2b1c5a3

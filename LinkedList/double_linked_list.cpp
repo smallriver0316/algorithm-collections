@@ -13,9 +13,10 @@ struct Node
 
 class DoubleLinkedList
 {
-public:
+private:
     Node *nil;
 
+public:
     DoubleLinkedList()
     {
         nil = (Node *)malloc(sizeof(Node));
