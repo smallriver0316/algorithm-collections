@@ -117,3 +117,22 @@ Inorder
 Postorder
 2 3 1 6 7 5 8 4 0
 ```
+
+## Reconstruction of Tree
+
+It reconstructs binary tree.
+
+Given Preorder and Inorder node array, this program output Postorder array.
+
+```bash
+$ g++ reconstruct_tree.cpp
+$ ./a.out
+# initial input is number of nodes
+5
+# Preorder node array
+1 2 3 4 5
+# Inorder node array
+3 2 4 1 5
+# result is Postorder
+3 4 2 5 1
+```

@@ -27,6 +27,8 @@ int findRoot(int n)
     return i;
 }
 
+// 先行順巡回
+// node->left->right
 void preorderWalk(int root)
 {
     int left = T[root].l;
@@ -41,6 +43,8 @@ void preorderWalk(int root)
         preorderWalk(right);
 }
 
+// 中間順巡回
+// left->node->right
 void inorderWalk(int root)
 {
     int left = T[root].l;
@@ -55,6 +59,8 @@ void inorderWalk(int root)
         inorderWalk(right);
 }
 
+// 後行順巡回
+// left->right->node
 void postorderWalk(int root)
 {
     int left = T[root].l;
