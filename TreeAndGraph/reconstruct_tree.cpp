@@ -29,21 +29,28 @@ void printPostorder(int start, int end, int node_idx)
         return;
 
     int node = P[node_idx];
-    int node_pos; // node position in Inorder
+    int node_pos = -1; // node position in Inorder
     // search node position
-    for (int i = start; i < end + 1; i++)
+    for (int i = start; i <= end; i++)
     {
         if (I[i] == node)
         {
             node_pos = i;
+            break;
         }
     }
+    if (node_pos == -1)
+    {
+        printPostorder(start, end, ++node_idx);
+        return;
+    }
+
     // print left children
     int left_s = start;
     int left_e = node_pos;
     if (left_e - left_s > 1)
     {
-        printPostorder(left_s, left_e - 1, node_idx + 1);
+        printPostorder(left_s, left_e - 1, ++node_idx);
     }
     else if (left_e - left_s == 1)
     {
@@ -55,7 +62,7 @@ void printPostorder(int start, int end, int node_idx)
     int right_e = end;
     if (right_e - right_s > 1)
     {
-        printPostorder(right_s + 1, right_e, node_idx + 1);
+        printPostorder(right_s + 1, right_e, ++node_idx);
     }
     else if (right_e - right_s == 1)
     {
