@@ -44,6 +44,13 @@ void koch(Point start, Point end, int count)
     koch(t, end, count - 1);
 }
 
+void printKochCurbe(Point start, Point end, int count)
+{
+    printf("%.8f %.8f\n", start.x, start.y);
+    koch(start, end, count);
+    printf("%.8f %.8f\n", end.x, end.y);
+}
+
 int main()
 {
     int n;
@@ -52,9 +59,7 @@ int main()
     Point start = {x : 0.0, y : 0.0};
     Point end = {x : 100.0, y : 0.0};
 
-    printf("%.8f %.8f\n", start.x, start.y);
-    koch(start, end, n);
-    printf("%.8f %.8f\n", end.x, end.y);
+    printKochCurbe(start, end, n);
 
     return 0;
 }
