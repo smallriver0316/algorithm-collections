@@ -5,7 +5,7 @@
 It determins if it is possible to create target numbers from sum of several elements in given array.
 
 ```bash
-$ g++ exhaustive_search.cpp
+$ g++ exhaustive_search1.cpp
 $ ./a.out
 # initial input is number of array elements
 5
@@ -16,6 +16,22 @@ $ ./a.out
 # forth inputs are target numbers
 2 17 4 8
 # result
+no
+yes
+no
+yes
+```
+
+exhaustive_search1 is implemented with recursive processing.
+On the other hand, exhaustive_search2 uses dynamic programming.
+
+```bash
+$ g++ exhaustive_search2.cpp
+$ ./a.out
+5
+21 10 7 5 1
+4
+2 17 4 8
 no
 yes
 no

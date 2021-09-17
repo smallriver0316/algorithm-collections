@@ -30,7 +30,9 @@ bool exhaustiveSearch(int index, int m)
 {
     if (index >= n)
         return false;
-    if (A[index] == m)
+    else if (m == 0)
+        return true;
+    else if (A[index] == m)
         return true;
     else if (A[index] < m)
     {

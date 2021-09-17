@@ -8,7 +8,7 @@ struct Point
 };
 
 /*
-    _/\_
+    ___ => _/\_
     each point in koch curbe; start, s, u, t, end
 
     calculation of midpoints in a line, which devide internally as m : n.
