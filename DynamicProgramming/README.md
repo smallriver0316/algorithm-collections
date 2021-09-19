@@ -18,3 +18,16 @@ yes
 no
 yes
 ```
+
+## Fibonacci Number
+
+It returns fibonacci number when the rank is specified.
+
+```bash
+$ g++ fibonacci_number.cpp
+$ ./a.out
+# input is rank of fibonacci numbers
+10
+# result
+89
+```

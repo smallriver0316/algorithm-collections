@@ -22,8 +22,8 @@ source ~/.bash_profile
 ## How to compile
 
 ```bash
-g++ test.cc
-g++ -o test.exe test.cc
+g++ test.cpp
+g++ -o test.exe test.cpp
 ```
 
 ## How to execute
