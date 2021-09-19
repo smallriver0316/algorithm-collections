@@ -1,4 +1,4 @@
-# Recursive and Dynamic Programming
+# Recursive Processing
 
 ## Exhaustive Search
 
@@ -22,22 +22,6 @@ no
 yes
 ```
 
-exhaustive_search1 is implemented with recursive processing.
-On the other hand, exhaustive_search2 uses dynamic programming.
-
-```bash
-$ g++ exhaustive_search2.cpp
-$ ./a.out
-5
-21 10 7 5 1
-4
-2 17 4 8
-no
-yes
-no
-yes
-```
-
 ## Koch Curbe
 
 It outputs each points of koch curbe.
@@ -45,7 +29,7 @@ It outputs each points of koch curbe.
 Koch curbe has vertices which increase with the depth.
 
 ```bash
-$ g++ koch_curve.cpp
+$ g++ koch_curbe.cpp
 $ ./a.out
 # input is depth
 2
