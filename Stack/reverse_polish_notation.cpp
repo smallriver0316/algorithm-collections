@@ -4,7 +4,6 @@ using namespace std;
 
 class Stack
 {
-private:
     int top, S[200];
 
 public:

@@ -27,6 +27,12 @@ yes
 It outputs each points of koch curbe.
 
 Koch curbe has vertices which increase with the depth.
+When the depth increases, each edge has 3 vertices and the length of new edges are same.
+
+```txt
+depth = 0      depth = 1
+______    =>   __/\__
+```
 
 ```bash
 $ g++ koch_curbe.cpp

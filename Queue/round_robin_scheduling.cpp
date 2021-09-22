@@ -10,7 +10,6 @@ struct Process
 
 class Queue
 {
-private:
     int start, end, num;
     Process array[100000];
 
