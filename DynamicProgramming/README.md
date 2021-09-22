@@ -31,3 +31,19 @@ $ ./a.out
 # result
 89
 ```
+
+## The Longest Common Subsequence
+
+It solves the length of the longest common subsequence (LSC) between two strings.
+
+In the following case, LCS is "bdab", so the length is 4.
+
+```bash
+$ g++ longest_common_subsequence.cpp
+$ ./a.out
+# inputs are two strings
+abcbdab
+bdcaba
+# result is the length of LCS
+4
+```
