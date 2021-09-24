@@ -13,7 +13,6 @@ struct Node
 
 class DoubleLinkedList
 {
-private:
     Node *nil;
 
 public:

@@ -1,4 +1,4 @@
-# Tree and Graph
+# Tree
 
 ## Rooted Tree
 
