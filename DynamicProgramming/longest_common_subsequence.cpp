@@ -5,7 +5,8 @@ using namespace std;
 
 #define N 1000
 
-int searchLCS(string X, string Y)
+// calculate length of the longest common subsequence
+int calcLCS(string X, string Y)
 {
     int LCS[N + 1][N + 1];
     int m = X.size();
@@ -14,6 +15,8 @@ int searchLCS(string X, string Y)
     X = " " + X;
     Y = " " + Y;
 
+    // initialization
+    // first elements are pseudo ones, so make them zeros.
     for (int i = 0; i <= m; i++)
         LCS[i][0] = 0;
     for (int j = 0; j <= n; j++)
@@ -41,6 +44,6 @@ int main()
 {
     string s1, s2;
     cin >> s1 >> s2;
-    cout << searchLCS(s1, s2) << endl;
+    cout << calcLCS(s1, s2) << endl;
     return 0;
 }

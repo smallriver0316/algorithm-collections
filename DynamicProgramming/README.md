@@ -47,3 +47,31 @@ bdcaba
 # result is the length of LCS
 4
 ```
+
+## Matrix Chain Multiplication
+
+It solves Matrix-Chain Multiplication problem.
+
+For example, when multiplying three matrices, like M1 \* M2 \* M3, the number of total multiplications varies in accordance with the order.
+In this case, there are two patterns of order.
+
+- M1 \* (M2 \* M3)
+- (M1 \* M2) \* M3
+
+This program figures out the minimum number of the multiplications.
+
+```bash
+$ g++ matrix_chain_multiplication.cpp
+$ ./a.out
+# initial input is number of matrix
+6
+# followings are number of rows and columns of each matrix
+30 35
+35 15
+15 5
+5 10
+10 20
+20 25
+# result
+15125
+```
