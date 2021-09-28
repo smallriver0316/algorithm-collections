@@ -1,8 +1,8 @@
-# Sort
+# Sorting
 
 ## Insertion Sort
 
-It sorts given an array in ascending order with insertion sort.
+It sorts a given array in ascending order with insertion sort.
 
 Furthermore, it outputs the rearranged array in the each process.
 
@@ -21,3 +21,29 @@ $ ./a.out
 1 2 4 5 6 3
 1 2 3 4 5 6
 ```
+
+Functional order of Insertion Sort is O(N2) at worst, it is when given array is initially descending order.
+
+But when it is initially ascending order, there happens no replacement of elements, so the order become O(N).
+
+## Bubble Sort
+
+It sorts a given array in ascending order with insertion with bubble sort.
+
+Furthermore, it outputs the number of replacements in the sorting.
+
+```bash
+$ g++ bubble_sort.cpp
+$ ./a.out
+# initial input is number of elements
+5
+# second input is array
+5 3 2 4 1
+# result
+# the first is sorted array
+1 2 3 4 5
+# the second is number of replacements in sorting.
+8
+```
+
+Functional order of Bubble Sort is O(N2).
