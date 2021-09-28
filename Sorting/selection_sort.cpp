@@ -5,18 +5,21 @@ using namespace std;
 
 int n, A[N];
 
-void bubbleSort()
+void selectionSort()
 {
     int count = 0;
     for (int i = 0; i < n; i++)
     {
-        for (int j = n - 1; j > i; j--)
+        int minIdx = i;
+        for (int j = i; j < n; j++)
         {
-            if (A[j - 1] > A[j])
-            {
-                swap(A[j - 1], A[j]);
-                count++;
-            }
+            if (A[j] < A[minIdx])
+                minIdx = j;
+        }
+        if (minIdx != i)
+        {
+            count++;
+            swap(A[i], A[minIdx]);
         }
     }
 
@@ -40,7 +43,7 @@ int main()
         cin >> A[i];
     }
 
-    bubbleSort();
+    selectionSort();
 
     return 0;
 }
