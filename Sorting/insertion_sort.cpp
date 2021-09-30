@@ -45,7 +45,9 @@ int main()
         cin >> A[i];
     }
 
+    // output initial array
     printArray();
+    // output array under sorted
     insertionSort();
 
     return 0;

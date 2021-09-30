@@ -70,3 +70,30 @@ $ ./a.out
 ```
 
 Functional order of Selection Sort is O(N2).
+
+## Shell Sort
+
+It sorts a given array in ascending order with shell sort.
+
+Shell sort is an applied method of selection sort, which can sort quickly in the case that the given array is almost sorted.
+
+```bash
+$ g++ shell_sort.cpp
+$ ./a.out
+# initial input is length of given array
+10
+# second input is array
+4 8 9 1 10 6 2 5 3 7
+
+# result
+# length of gap sequence in shell sort
+2
+# elements of gaps
+1 4
+# number of replacements
+16
+# sorted array
+1 2 3 4 5 6 7 8 9 10
+```
+
+Functional order of Shell Sort is O(N3/4) ~ O(N2).
