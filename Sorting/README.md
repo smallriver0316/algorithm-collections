@@ -13,6 +13,7 @@ $ ./a.out
 6
 # second input is array
 5 2 4 6 1 3
+
 # result; it is written in each process of insertion sort.
 5 2 4 6 1 3
 2 5 4 6 1 3
@@ -40,6 +41,7 @@ $ ./a.out
 5
 # second input is array
 5 3 2 4 1
+
 # result
 # the first is sorted array
 1 2 3 4 5
@@ -62,6 +64,7 @@ $ ./a.out
 6
 # second input is array
 5 6 4 2 1 3
+
 # result
 # the first is sorted array
 1 2 3 4 5 6
@@ -97,3 +100,26 @@ $ ./a.out
 ```
 
 Functional order of Shell Sort is O(N3/4) ~ O(N2).
+
+## Merge Sort
+
+It sorts a given array in ascending order with merge sort.
+
+Furthermore, it outputs the number of comparisons in the sorting.
+
+```bash
+$ g++ merge_sort.cpp
+$ ./a.out
+# initial input is length of given array
+10
+# second input is array
+8 5 9 2 6 3 7 1 10 4
+
+# result
+# sorted array
+1 2 3 4 5 6 7 8 9 10
+# number of comparisons
+34
+```
+
+Functional order of Merge Sort is O(NlogN).
