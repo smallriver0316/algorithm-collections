@@ -122,4 +122,29 @@ $ ./a.out
 34
 ```
 
-Functional order of Merge Sort is O(NlogN).
+In Merge Sort, functional order of dividing is O(logN), because an original array is devided into half repeatedly until only one element remained.
+Additionally, order of merging is O(N).
+As a result, functional order of Merge Sort is O(NlogN).
+
+## Partition
+
+It classifies elements of a given array with a target of partition.
+
+The target is the last element of the given array.
+Elements of less than the target are aligned to left side, and larger ones are to right side.
+
+```bash
+$ g++ partition.cpp
+$ ./a.out
+# initial input is length of given array
+12
+# second input is array
+13 19 9 5 12 8 7 4 21 2 6 11
+
+# result
+# sorted array with highlighted partition
+9 5 8 7 4 2 6 [11] 13 21 12 19
+```
+
+This operation is similar to Selection Sort.
+The functional order is O(N).
