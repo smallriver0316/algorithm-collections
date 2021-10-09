@@ -148,3 +148,41 @@ $ ./a.out
 
 This operation is similar to Selection Sort.
 The functional order is O(N).
+
+## Quick Sort
+
+It sorts a given array in ascending order with Quick Sort.
+It uses partition in sorting.
+
+The given array is assumed to be list of cards,
+which are composed of pairs of a character and a number.
+
+Furthermore, it shows whether the sorting method is stable,
+which means relative order of cards with same number and different character does not change.
+
+```bash
+$ g++ quick_sort.cpp
+$ ./a.out
+# initial input is length of array
+6
+# second input is cards, pairs of character and number
+D 3
+H 2
+D 1
+S 3
+D 2
+C 1
+
+# result
+# whether result of sorting is Stable or Not Stable.
+Not Stable
+# sorted array
+D 1
+C 1
+D 2
+H 2
+D 3
+S 3
+```
+
+Functional Order of Quick Sort is O(NlogN).
