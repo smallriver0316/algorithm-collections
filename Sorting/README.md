@@ -2,7 +2,7 @@
 
 ## Insertion Sort
 
-It sorts a given array in ascending order with insertion sort.
+It sorts a given array in ascending order with Insertion Sort.
 
 Furthermore, it outputs the rearranged array in the each process.
 
@@ -30,7 +30,7 @@ In that case, the order becomes O(N).
 
 ## Bubble Sort
 
-It sorts a given array in ascending order with insertion with bubble sort.
+It sorts a given array in ascending order with insertion with Bubble Sort.
 
 Furthermore, it outputs the number of replacements in the sorting.
 
@@ -53,7 +53,7 @@ Functional order of Bubble Sort is O(N2).
 
 ## Selection Sort
 
-It sorts a given array in ascending order with selection sort.
+It sorts a given array in ascending order with Selection Sort.
 
 Furthermore, it outputs the number of replacements in the sorting.
 
@@ -76,7 +76,7 @@ Functional order of Selection Sort is O(N2).
 
 ## Shell Sort
 
-It sorts a given array in ascending order with shell sort.
+It sorts a given array in ascending order with Shell Sort.
 
 Shell sort is an applied method of selection sort, which can sort quickly in the case that the given array is almost sorted.
 
@@ -103,7 +103,7 @@ Functional order of Shell Sort is O(N3/4) ~ O(N2).
 
 ## Merge Sort
 
-It sorts a given array in ascending order with merge sort.
+It sorts a given array in ascending order with Merge Sort.
 
 Furthermore, it outputs the number of comparisons in the sorting.
 
@@ -152,7 +152,6 @@ The functional order is O(N).
 ## Quick Sort
 
 It sorts a given array in ascending order with Quick Sort.
-It uses partition in sorting.
 
 The given array is assumed to be list of cards,
 which are composed of pairs of a character and a number.
@@ -165,7 +164,7 @@ $ g++ quick_sort.cpp
 $ ./a.out
 # initial input is length of array
 6
-# second input is cards, pairs of character and number
+# second input is cards, pairs of suit and number
 D 3
 H 2
 D 1
@@ -185,4 +184,37 @@ D 3
 S 3
 ```
 
-Functional Order of Quick Sort is O(NlogN).
+Quick Sort uses partition in sorting.
+Functional order of partition is O(N).
+Furthermore, all partitionings take O(logN).
+
+So the functional Order of Quick Sort is O(NlogN).
+
+## Stable Sort
+
+This is to confirm the logic of destinguish whether sorting method is stable or not.
+
+The logic is one that used in Quick Sort.
+
+It can be confirmed by testing a result of Bubble Sort, which is known as stable sort.
+In addiotion, it tests a result of Selection Sort.
+From the two sorting results, confirm that isStable logic is valid.
+
+```bash
+$ g++ stable_sort.cpp
+$ ./a.out
+# initial input is length of array
+5
+# second input is cards, pairs of suit and value
+H4 C9 S4 D2 C3
+
+# result
+# first result is of Bubble Sort
+D2 C3 H4 S4 C9
+# Bubble Sort is stable or not
+Stable
+# second result is of Selection Sort
+D2 C3 S4 H4 C9
+# Selection Sort is stable or not
+Not Stable
+```

@@ -5,7 +5,7 @@ using namespace std;
 
 struct Card
 {
-    char c;
+    char suit;
     int num;
     int index;
 };
@@ -56,7 +56,7 @@ int main()
     cin >> n;
     for (int i = 0; i < n; i++)
     {
-        cin >> A[i].c >> A[i].num;
+        cin >> A[i].suit >> A[i].num;
         A[i].index = i;
     }
 
@@ -68,7 +68,7 @@ int main()
         cout << "Not Stable" << endl;
 
     for (int i = 0; i < n; i++)
-        cout << A[i].c << " " << A[i].num << endl;
+        cout << A[i].suit << " " << A[i].num << endl;
 
     return 0;
 }
