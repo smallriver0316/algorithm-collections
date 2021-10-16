@@ -192,7 +192,7 @@ So the functional Order of Quick Sort is O(NlogN).
 
 ## Stable Sort
 
-This is to confirm the logic of destinguish whether sorting method is stable or not.
+This is to confirm the logic of determine whether sorting method is stable or not.
 
 The logic is one that used in Quick Sort.
 
@@ -218,3 +218,28 @@ D2 C3 S4 H4 C9
 # Selection Sort is stable or not
 Not Stable
 ```
+
+## Counting Sort
+
+It sorts a given array in ascending order with Counting Sort.
+
+Counting Sort uses an array to record frequency of each element.
+And this size is equal to the max number of elements.
+
+The max size of array is 2000000.
+So if try to create arrays of the size of int, segmentation fault will happen.
+
+```bash
+$ g++ counting_sort.cpp
+$ ./a.out
+# initial input is length of array
+7
+# second input is array
+2 5 1 3 2 3 0
+
+# result; sorted array
+0 1 2 2 3 3 5
+```
+
+The functional order of Counting Sort is O(N + K),
+K is the size of array to record frequency.
