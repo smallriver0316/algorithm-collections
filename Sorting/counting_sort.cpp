@@ -18,7 +18,8 @@ void countingSort(unsigned short A[], unsigned short B[], int max, int n)
         C[i] += C[i - 1];
 
     // sort with C
-    for (int i = 0; i < n; i++)
+    // when sort from (n-1)th element, output becomes stable
+    for (int i = n - 1; i >= 0; i--)
     {
         B[C[A[i]] - 1] = A[i];
         C[A[i]]--;

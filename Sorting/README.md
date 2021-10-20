@@ -226,7 +226,7 @@ It sorts a given array in ascending order with Counting Sort.
 Counting Sort uses an array to record frequency of each element.
 And this size is equal to the max number of elements.
 
-The max size of array is 2000000.
+The max size of the given array is 2000000.
 So if try to create arrays of the size of int, segmentation fault will happen.
 
 ```bash
@@ -243,3 +243,22 @@ $ ./a.out
 
 The functional order of Counting Sort is O(N + K),
 K is the size of array to record frequency.
+
+## Number of Inversion
+
+Giben an array, a1, a2, a3, ..., an,
+when there are elements such as i < j and ai > aj,
+it calls inversion.
+
+This program count the number of inversion.
+
+It is equal to the number of swap in Bubble Sort,
+but it takes too much operation cost because the functional order is O(N2).
+
+```bash
+$ g++ inversion.cpp
+$ ./a.out
+6
+5 3 6 2 1 4
+10
+```
