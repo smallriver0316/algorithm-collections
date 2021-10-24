@@ -7,13 +7,14 @@ using namespace std;
 
 /*
     p[i]: number of rows of i-th matrix (in this case, number of columns of i-th matrix is equal to number of rows of (i+1)-th matrix)
-    M[i][j]: minimum number of matrix chain multiplication between i-th and j-th matrix
+    M[i][j]: minimum number of matrix chain multiplications between i-th and j-th matrix
 */
 int p[N + 1], M[N][N];
 
 // calculate matrix chain multiplication
 int calcMCM(int start, int end)
 {
+    // if already calculated
     if (M[start][end] != INFTY)
         return M[start][end];
 
@@ -37,11 +38,11 @@ int main()
     }
 
     // initialization
-    for (int i = 0; i <= n; i++)
+    for (int i = 0; i < n; i++)
     {
-        for (int j = 0; j <= n; j++)
+        for (int j = 0; j < n; j++)
         {
-            if (i == j)
+            if (i == j) // if no multiplications
                 M[i][j] = 0;
             else
                 M[i][j] = INFTY;
