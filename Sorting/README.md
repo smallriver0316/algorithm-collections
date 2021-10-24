@@ -246,11 +246,11 @@ K is the size of array to record frequency.
 
 ## Number of Inversion
 
-Giben an array, a1, a2, a3, ..., an,
+Given an array, a1, a2, a3, ..., an,
 when there are elements such as i < j and ai > aj,
 it calls inversion.
 
-This program count the number of inversion.
+This program counts the number of inversion.
 
 It is equal to the number of swap in Bubble Sort,
 but it takes too much operation cost because the functional order is O(N2).
@@ -258,7 +258,33 @@ but it takes too much operation cost because the functional order is O(N2).
 ```bash
 $ g++ inversion.cpp
 $ ./a.out
+# initial input is length of array
 6
+# second input is array
 5 3 6 2 1 4
+
+# result: number of inversion
 10
+```
+
+## Minimum Cost Sort
+
+Assume there are several burdens of some weight,
+and now try to sort them in ascending order of its weight.
+
+Sorting takes cost.
+When replacing burdens of weight a and b, it takes const of (a + b).
+
+In this case, this program calculates the minimum cost for sorting.
+
+```bash
+$ g++ minimum_cost_sort.cpp
+$ ./a.out
+# initial input is number of burdens
+7
+# second input is array of burdens' weight
+4 3 2 7 1 6 5
+
+# result: minimum cost of sorting
+24
 ```
