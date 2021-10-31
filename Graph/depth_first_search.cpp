@@ -7,14 +7,20 @@ using namespace std;
 #define UNDER_VISITING 1
 #define FINISH_VISITED 2
 
-int n, Adj[N][N];
+/*
+    M: Adjacent Matrix of graph
+    visit: list of status whether visited in depth first search
+    start: list of timestamps when each vertex is visited at first in search
+    finish: list of timestamps when each veritex and its adjacent vertices are completed in search
+*/
+int n, M[N][N];
 int visit[N], start[N], finish[N];
 
 int nextVertex(int uidx, int vidx)
 {
     for (int i = vidx + 1; i < n; i++)
     {
-        if (Adj[uidx][i] && visit[i] == NOT_VISITED)
+        if (M[uidx][i] && visit[i] == NOT_VISITED)
             return i;
     }
     return -1;
@@ -74,7 +80,7 @@ int main()
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++)
-            Adj[i][j] = 0;
+            M[i][j] = 0;
     }
 
     for (int i = 0; i < n; i++)
@@ -85,7 +91,7 @@ int main()
         {
             cin >> v;
             int vidx = v - 1;
-            Adj[uidx][vidx] = 1;
+            M[uidx][vidx] = 1;
         }
     }
 
