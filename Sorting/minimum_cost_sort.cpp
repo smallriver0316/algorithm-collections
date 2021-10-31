@@ -65,7 +65,7 @@ int calcMinimumCost(int n, int minv)
             sum += v;
             cur = T[cur];
             if (V[cur])
-                // if next position has already checked, finish cycle.
+                // if the next position has already checked, finish cycle.
                 break;
         }
         // select minimum value of using minimum value in a cycle or using minimum value in whole array.
