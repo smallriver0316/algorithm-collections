@@ -9,18 +9,18 @@ using namespace std;
 
 /*
     M: Adjacent Matrix of graph
-    visit: list of status whether visited in depth first search
+    V: list of status whether visited in depth first search
     start: list of timestamps when each vertex is visited at first in search
     finish: list of timestamps when each veritex and its adjacent vertices are completed in search
 */
 int n, M[N][N];
-int visit[N], start[N], finish[N];
+int V[N], start[N], finish[N];
 
 int nextVertex(int uidx, int vidx)
 {
     for (int i = vidx + 1; i < n; i++)
     {
-        if (M[uidx][i] && visit[i] == NOT_VISITED)
+        if (M[uidx][i] && V[i] == NOT_VISITED)
             return i;
     }
     return -1;
@@ -30,7 +30,7 @@ int dfsVisit(int index, int timestamp)
 {
     stack<int> S;
     S.push(index);
-    visit[index] = UNDER_VISITING;
+    V[index] = UNDER_VISITING;
     start[index] = ++timestamp;
 
     int u, v = 0;
@@ -40,14 +40,14 @@ int dfsVisit(int index, int timestamp)
         v = nextVertex(u, v);
         if (v != -1)
         {
-            visit[v] = UNDER_VISITING;
+            V[v] = UNDER_VISITING;
             start[v] = ++timestamp;
             S.push(v);
         }
         else
         {
             S.pop();
-            visit[u] = FINISH_VISITED;
+            V[u] = FINISH_VISITED;
             finish[u] = ++timestamp;
         }
     }
@@ -59,11 +59,11 @@ void dfs()
     // initialization
     int timestamp = 0;
     for (int i = 0; i < n; i++)
-        visit[i] = NOT_VISITED;
+        V[i] = NOT_VISITED;
     // calculation
     for (int i = 0; i < n; i++)
     {
-        if (visit[i] == NOT_VISITED)
+        if (V[i] == NOT_VISITED)
             timestamp = dfsVisit(i, timestamp);
     }
     // output
