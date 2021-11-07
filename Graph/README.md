@@ -75,7 +75,7 @@ These processes are acheived with Queue.
 
 It outputs whether given pairs of vertices in Graph are reachable.
 
-The graph is bi-directional.
+The graph is a non-oriented graph.
 Vertices of the given graph have numbers which start from 0 to (n-1) and they are sequential.
 
 ```bash
@@ -105,3 +105,47 @@ yes
 1 3
 no
 ```
+
+## Minimum Spanning Tree
+
+It calculates minimum spanning tree(MST) from a given weighted graph
+and output the total weight of it.
+
+Tree is graph which has no closed path, and tree which has pathes to all the vertices is called spanning tree.
+MST is one of which total weights of the edges become minumum value.
+
+```bash
+$ g++ minimum_spanning_tree1.cpp
+$ ./a.out
+5
+-1 2 3 1 -1
+2 -1 -1 4 -1
+3 -1 -1 1 1
+1 4 1 -1 3
+-1 -1 1 3 -1
+5
+```
+
+```bash
+$ g++ minimum_spanning_tree2.cpp
+$ ./a.out
+5
+-1 2 3 1 -1
+2 -1 -1 4 -1
+3 -1 -1 1 1
+1 4 1 -1 3
+-1 -1 1 3 -1
+5
+```
+
+minimum_spanning_tree2.cpp uses prim's algorithm.
+
+Both programs separate vertices into two group, ones inside MST and others outside MST,
+and try to find minimum weight between them and to make a vertex of the minimum weight included into MST one by one.
+Prim's algorithm forcuses ones outside MST.
+It calculates minimum weight against each vertex outside MST to MST.
+
+On the other hand, minimum_spannig_tree1.cpp forcuses vertices inside MST,
+but the principle of the following processes is same.
+
+Functional orders of them are roughly O(N2).
