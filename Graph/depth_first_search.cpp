@@ -4,8 +4,8 @@ using namespace std;
 
 #define N 100
 #define NOT_VISITED 0
-#define UNDER_VISITING 1
-#define FINISH_VISITED 2
+#define VISITING 1
+#define VISITED 2
 
 /*
     M: Adjacent Matrix of graph
@@ -30,7 +30,7 @@ int dfsVisit(int index, int timestamp)
 {
     stack<int> S;
     S.push(index);
-    V[index] = UNDER_VISITING;
+    V[index] = VISITING;
     start[index] = ++timestamp;
 
     int u, v = 0;
@@ -40,14 +40,14 @@ int dfsVisit(int index, int timestamp)
         v = nextVertex(u, v);
         if (v != -1)
         {
-            V[v] = UNDER_VISITING;
+            V[v] = VISITING;
             start[v] = ++timestamp;
             S.push(v);
         }
         else
         {
             S.pop();
-            V[u] = FINISH_VISITED;
+            V[u] = VISITED;
             finish[u] = ++timestamp;
         }
     }

@@ -6,6 +6,7 @@ It outputs start and end timestamps against each vertex of a given graph when de
 
 In depth first search, connected vertices are visited preferentially from one to the next.
 After all connected are visited, shift the next unvisited vertices.
+These processes are achieved with Stack.
 
 The graph is an oriented graph.
 Vertices of the given graph have numbers which start from 1 to n and they are sequential.
@@ -68,6 +69,7 @@ $ ./a.out
 
 In breadth first search, vertices connected directly to the target vertex are visited preferentially.
 After all of them are visited, shift the target to one of them.
+These processes are acheived with Queue.
 
 ## Connected Components
 
