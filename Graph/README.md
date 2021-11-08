@@ -149,3 +149,21 @@ On the other hand, minimum_spannig_tree1.cpp forcuses vertices inside MST,
 but the principle of the following processes is same.
 
 Functional orders of them are roughly O(N2).
+
+## Single Source Shortest Path
+
+```bash
+$ g++ single_source_shortest_path1.cpp
+$ ./a.out
+5
+0 3 2 3 3 1 1 2
+1 2 0 2 3 4
+2 3 0 3 3 1 4 1
+3 4 2 1 0 1 1 4 4 3
+4 2 2 1 3 3
+0 0
+1 2
+2 3
+3 1
+4 4
+```
