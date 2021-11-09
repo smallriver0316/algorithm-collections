@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 
 #define N 100
@@ -7,56 +6,53 @@ using namespace std;
 #define NIL -1
 #define INFTY (1 << 21)
 
-/*
-    n: number of vertices
-    M: adjacent matrix of graph which records weight of each edge
-*/
 int n, M[N][N];
 
-void solve()
+void dijkstra()
 {
     /*
         W: minimum weight between vertex 0 and another
+        V: array of flags whether a vertex is visited or not
     */
-    int W[N];
-    vector<int> s3p; // single source shortest path
+    int V[N], W[N];
+    int minW;
 
-    // initialization
+    // initilization
     for (int i = 0; i < n; i++)
-        W[i] = INFTY;
-
-    W[0] = 0;
-    s3p.push_back(0);
-
-    while (s3p.size() < n)
     {
-        int u, v;
-        int minW = INFTY; // minimum weight from vertex 0 to v
-        for (int i = 0; i < s3p.size(); i++)
-        {
-            u = s3p[i];
-            for (int j = 1; j < n; j++)
-            {
-                if (M[u][j] != NIL && W[j] == INFTY)
-                {
-                    if (minW > M[u][j] + W[u])
-                    {
-                        v = j;
-                        minW = M[u][j] + W[u];
-                    }
-                }
-            }
-        }
-        if (minW != INFTY)
-        {
-            s3p.push_back(v);
-            W[v] = minW;
-        }
-        else
-            break;
+        V[i] = 0;
+        W[i] = INFTY;
     }
 
-    // output
+    // start from 0
+    W[0] = 0;
+    while (1)
+    {
+        minW = INFTY;
+        int u = NIL;
+        for (int i = 0; i < n; i++)
+        {
+            if (minW > W[i] && V[i] != 1)
+            {
+                u = i;
+                minW = W[i];
+            }
+        }
+
+        if (u == NIL)
+            break;
+
+        V[u] = 1;
+        for (int v = 0; v < n; v++)
+        {
+            if (V[v] != 1 && M[u][v] != INFTY)
+            {
+                if (W[v] > W[u] + M[u][v])
+                    W[v] = W[u] + M[u][v];
+            }
+        }
+    }
+
     for (int i = 0; i < n; i++)
         cout << i << " " << (W[i] == INFTY ? -1 : W[i]) << endl;
 }
@@ -72,11 +68,11 @@ int main()
     int u, k, v, w;
 
     cin >> n;
-    // initilization
+    // initialization
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++)
-            M[i][j] = NIL;
+            M[i][j] = INFTY;
     }
     // read inputs
     for (int i = 0; i < n; i++)
@@ -89,7 +85,7 @@ int main()
         }
     }
 
-    solve();
+    dijkstra();
 
     return 0;
 }

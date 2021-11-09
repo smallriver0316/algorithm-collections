@@ -152,6 +152,20 @@ Functional orders of them are roughly O(N2).
 
 ## Single Source Shortest Path
 
+It calculates minimum distance from vertex 0 to each vertex in a given graph.
+
+The graph is an oriented graph with weight on the edges.
+The vertices have numbers which start from 0 to (n-1) and they are sequential.
+And there must be pathes from vertex 0 to each vertex.
+In this question, distance between vertex 0 and another is sum of weights on the pathes.
+
+Limitation is below.
+
+```txt
+1 <= n <= 100
+0 <= weight on edge <= 100000
+```
+
 ```bash
 $ g++ single_source_shortest_path1.cpp
 $ ./a.out
@@ -163,7 +177,26 @@ $ ./a.out
 4 2 2 1 3 3
 0 0
 1 2
-2 3
+2 2
 3 1
-4 4
+4 3
+```
+
+single_source_shortest_path2.cpp uses Dijkstra's algorithm.
+It is the same as minimum spanning tree (MST) in essence.
+
+```bash
+$ g++ single_source_shortest_path2.cpp
+$ ./a.out
+5
+0 3 2 3 3 1 1 2
+1 2 0 2 3 4
+2 3 0 3 3 1 4 1
+3 4 2 1 0 1 1 4 4 3
+4 2 2 1 3 3
+0 0
+1 2
+2 2
+3 1
+4 3
 ```

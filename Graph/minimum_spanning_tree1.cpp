@@ -28,10 +28,11 @@ int searchMST(int s)
     {
         int minW = MAX;
         int nextIdx = NIL;
-        for (int u = 0; u < mst.size(); u++)
+        for (int i = 0; i < mst.size(); i++)
         {
             for (int v = 0; v < n; v++)
             {
+                int u = mst[i];
                 if (M[u][v] != NIL && V[v] == 0)
                 {
                     if (minW > M[u][v])

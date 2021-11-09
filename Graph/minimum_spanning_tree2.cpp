@@ -37,6 +37,7 @@ int prim()
     {
         int minW = MAX;
         int u = NIL;
+        // search minimum weight between vertex outside MST and one inside vertex
         for (int i = 0; i < n; i++)
         {
             if (minW > W[i] && V[i] != 1)
@@ -49,9 +50,9 @@ int prim()
         if (u == NIL)
             break;
 
+        // make the found vertex included into MST
         V[u] = 1;
         count++;
-
         for (int v = 0; v < n; v++)
         {
             if (V[v] != 1 && M[u][v] != NIL)
