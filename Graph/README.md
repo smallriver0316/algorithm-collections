@@ -200,3 +200,24 @@ $ ./a.out
 3 1
 4 3
 ```
+
+Both programs take O(N2) as functional order.
+
+But using priority queue makes it O((|V| + |E|)log|V|).
+single_source_shortest_path3.cpp uses Dijkstra's algorithm with priority queue and adjacent list.
+
+```bash
+$ g++ single_source_shortest_path3.cpp
+$ ./a.out
+5
+0 3 2 3 3 1 1 2
+1 2 0 2 3 4
+2 3 0 3 3 1 4 1
+3 4 2 1 0 1 1 4 4 3
+4 2 2 1 3 3
+0 0
+1 2
+2 2
+3 1
+4 3
+```

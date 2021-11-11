@@ -47,6 +47,10 @@ void solve()
                 }
             }
         }
+        /*
+            It is necessary to find minimum weight path one by one,
+            because there may be a path such as detoured path shorter than direct one.
+        */
         if (minW != INFTY)
         {
             s3p.push_back(v);
