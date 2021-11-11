@@ -273,7 +273,7 @@ Assume there are several burdens of some weight,
 and now try to sort them in ascending order of its weight.
 
 Sorting takes cost.
-When replacing burdens of weight a and b, it takes const of (a + b).
+When replacing burdens of weight a and b, it takes cost of (a + b).
 
 In this case, this program calculates the minimum cost for sorting.
 
