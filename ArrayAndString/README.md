@@ -59,3 +59,17 @@ abcdea
 # result
 Not Unique
 ```
+
+## Permutated String
+
+When two strings given, it distinguishes whether one is permutattion of another.
+
+```bash
+$ g++ permutated_string.cpp
+$ ./a.out
+# input
+abcdefg
+gfedcba
+# result
+Permutated
+```
