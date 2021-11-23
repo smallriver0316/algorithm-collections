@@ -73,3 +73,23 @@ gfedcba
 # result
 Permutated
 ```
+
+## URLify
+
+It **_replaces_** blank with "%20" in a given string.
+(Not just output the string which the blanks are replaced.)
+
+It assumes that the given string has blanks at the end in order to have enough space for replacement.
+And the length of the string which excludes the blanks at the end is also given.
+
+```bash
+$ g++ urlify.cpp
+$ ./a.out
+# input
+# string is "Mr John Smith    "
+Mr John Smith
+# length of string without the length of blanks at the end
+13
+# result
+Mr%20John%20Smith
+```
