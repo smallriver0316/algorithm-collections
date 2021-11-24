@@ -30,9 +30,9 @@ int main()
     cin >> s;
 
     if (isUniqueChars(s))
-        cout << "Unique" << endl;
+        cout << "True" << endl;
     else
-        cout << "Not Unique" << endl;
+        cout << "False" << endl;
 
     return 0;
 }

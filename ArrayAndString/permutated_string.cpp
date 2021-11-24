@@ -35,9 +35,9 @@ int main()
     cin >> s2;
 
     if (isPermutated(s1, s2))
-        cout << "Permutated" << endl;
+        cout << "True" << endl;
     else
-        cout << "Not Permutated" << endl;
+        cout << "False" << endl;
 
     return 0;
 }

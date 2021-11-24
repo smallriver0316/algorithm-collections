@@ -35,11 +35,11 @@ $ ./a.out
 # input is string
 abcdefghijklmn
 # result
-Unique
+True
 # input
 abcdea
 # result
-Not Unique
+False
 ```
 
 unduplicated_string2.cpp uses bitwise operation.
@@ -53,11 +53,11 @@ $ ./a.out
 # input is string
 abcdefghijklmn
 # result
-Unique
+True
 # input
 abcdea
 # result
-Not Unique
+False
 ```
 
 ## Permutated String
@@ -71,7 +71,7 @@ $ ./a.out
 abcdefg
 gfedcba
 # result
-Permutated
+True
 ```
 
 ## URLify
@@ -93,3 +93,19 @@ Mr John Smith
 # result
 Mr%20John%20Smith
 ```
+
+## Permutated Palindrome
+
+It distinguish whether a given string is permutation of palindrome.
+
+```bash
+$ g++ permutated_palindrome1.cpp
+$ ./a.out
+# input
+Tact Coa
+# result; permutation is tacocat or atcocta
+True
+```
+
+permutated_palindrome2.cpp uses hash table.
+permutated_palindrome3.cpp uses bit operation.
