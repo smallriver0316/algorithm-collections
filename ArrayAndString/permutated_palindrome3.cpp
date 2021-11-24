@@ -14,7 +14,7 @@ bool isPermutatedPalindrome(string s)
             char a = 'a';
             int index = (int)tolower(s[i]) - (int)a;
             if (index < 0)
-                break;
+                continue;
             int mask = 1 << index;
             if ((bitVector & mask) == 0)
             {
