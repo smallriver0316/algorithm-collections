@@ -109,3 +109,25 @@ True
 
 permutated_palindrome2.cpp uses hash table.
 permutated_palindrome3.cpp uses bit operation.
+
+## One Edit Away
+
+It assumes there are 3 ways to edit string, insert, delete, and replace of a character.
+And it can do only one edition at a time.
+
+It distinguishes whether two given strings become equal after one edition or none.
+
+```bash
+$ g++ one_edit_away1.cpp
+$ ./a.out
+# input is two string
+pale
+ple
+# result
+True
+```
+
+one_edit_away1.cpp uses LCS(the longest common subsequence).
+It is a kind of dynamic programming.
+
+one_edit_away2.cpp is just compare two strings but the functional order is O(N).
