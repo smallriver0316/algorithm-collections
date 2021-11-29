@@ -21,7 +21,7 @@ aabcccccaaa
 a2b1c5a3
 ```
 
-It may be better to identify the length of compressed string before compression and to allocate memory for it.
+It checks length of the result before compression, because it takes too much cost to concatenate string, O(N2).
 
 ## Unduplicated String
 
