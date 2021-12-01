@@ -131,3 +131,27 @@ one_edit_away1.cpp uses LCS(the longest common subsequence).
 It is a kind of dynamic programming.
 
 one_edit_away2.cpp is just compare two strings but the functional order is O(N).
+
+## Rotation of Matrix
+
+It rotates N x N matrix with 90-degree.
+
+```bash
+$ g++ rotate_matrix.cpp
+$ ./a.out
+# input
+# initial input is number of N of N x N matrix
+4
+# second input is matrix
+1 2 3 4
+5 6 7 8
+9 10 11 12
+13 14 15 16
+# result
+13 9 5 1
+14 10 6 2
+15 11 7 3
+16 12 8 4
+```
+
+The functional order is O(N2), because this program must be access each element in the matrix.
