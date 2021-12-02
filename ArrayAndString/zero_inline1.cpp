@@ -5,12 +5,11 @@ using namespace std;
 
 #define N 100
 
-int M[N][N];
-vector<int> Col, Row;
-
 int main()
 {
     int n, m;
+    int M[N][N];
+    vector<int> Col, Row;
     cin >> n >> m;
 
     for (int i = 0; i < n; i++)

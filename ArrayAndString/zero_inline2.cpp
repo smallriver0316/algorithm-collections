@@ -34,7 +34,7 @@ int main()
         }
     }
 
-    // set zero in row other than first column
+    // set zeros in row other than the first column
     for (int i = 1; i < n; i++)
     {
         if (M[i][0] == 0)
@@ -46,7 +46,7 @@ int main()
         }
     }
 
-    // set zero in column other than first row
+    // set zeros in column other than the first row
     for (int j = 1; j < m; j++)
     {
         if (M[0][j] == 0)
@@ -58,7 +58,7 @@ int main()
         }
     }
 
-    // set zero in the first row and first column
+    // set zeros in the first row and the first column
     if (colHasZero)
     {
         for (int i = 0; i < n; i++)
