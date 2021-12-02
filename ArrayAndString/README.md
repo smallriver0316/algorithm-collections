@@ -155,3 +155,31 @@ $ ./a.out
 ```
 
 The functional order is O(N2), because this program must be access each element in the matrix.
+
+## Set zeros in Matrix
+
+When a given M x N matrix has a zero element, it sets zeros to all elements in the columns and rows including the element.
+
+```bash
+$ g++ zero_inline2.cpp
+$ ./a.out
+# input
+# initial inputs are M and N of M x N matrix
+4 5
+# second input is matrix
+1 2 0 3 9
+3 4 9 2 1
+2 0 3 9 7
+3 9 7 3 1
+# result
+0 0 0 0 0
+3 0 0 2 1
+0 0 0 0 0
+9 0 0 9 9
+```
+
+zero_inline1.cpp is simple. It takes notes of zero elements' position in vector.
+It converts the matrix with the notes.
+
+But zero_inline2.cpp is more efficient in memory and performance.
+It takes notes into the matrix itself, its first row and first column.
