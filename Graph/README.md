@@ -204,6 +204,8 @@ $ ./a.out
 Both programs take O(N2) as functional order.
 
 But using priority queue makes it O((|V| + |E|)log|V|).
+|V| is number of vertices and |E| is number of edges in graph.
+
 single_source_shortest_path3.cpp uses Dijkstra's algorithm with priority queue and adjacent list.
 
 ```bash
