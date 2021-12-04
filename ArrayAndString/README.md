@@ -183,3 +183,28 @@ It converts the matrix with the notes.
 
 But zero_inline2.cpp is more efficient in memory and performance.
 It takes notes into the matrix itself, its first row and first column.
+
+## Rotated String
+
+Under following conditions, it distinguishes whether a string is rotation of another one.
+
+- It can use a function of isSubstring, which distinguishes whether one string is substring of another.
+- It can use isSubstring only one time.
+
+For example, these strings are rotated of each other.
+
+1. waterfront
+2. ontwaterfr
+
+```bash
+$ g++ rotated_string.cpp
+$ ./a.out
+# inputs are two strings
+waterbottle
+erbottlewat
+# result
+True
+```
+
+isSubstring probably takes O(N1 + N2) of functional order, N1 and N2 are the length of each string.
+Otherwise, it uses concatenation of string, so the functional order is O(N), which is required for concatenation.
