@@ -28,3 +28,15 @@ delete 5
 # result
 6 1 2
 ```
+
+## Unique Linked List
+
+It removes duplicated elements from an unsorted linked list.
+
+```bash
+$ g++ unique_linked_list1.cpp
+$ ./a.out
+7
+1 2 3 2 4 1 8
+1 2 3 4 8
+```
