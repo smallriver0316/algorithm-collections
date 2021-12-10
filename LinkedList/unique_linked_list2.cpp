@@ -1,5 +1,4 @@
 #include <iostream>
-#include <unordered_map>
 using namespace std;
 
 struct Node
@@ -11,7 +10,6 @@ struct Node
 int main()
 {
     int n, key;
-    unordered_map<int, int> map;
     Node *nil = (Node *)malloc(sizeof(Node));
     nil->prev = nil;
     nil->next = nil;
@@ -23,7 +21,6 @@ int main()
         cin >> key;
         Node *x = (Node *)malloc(sizeof(Node));
         x->key = key;
-        // insert to end of list
         x->prev = nil->prev;
         nil->prev->next = x;
         nil->prev = x;
@@ -34,19 +31,20 @@ int main()
     Node *cur = nil->next;
     while (cur != nil)
     {
-        Node *next = cur->next;
-        if (map[cur->key] > 0)
+        Node *runner = cur->next;
+        while (runner != nil)
         {
-            // delete node
-            cur->prev->next = cur->next;
-            cur->next->prev = cur->prev;
-            free(cur);
+            Node *next = runner->next;
+            if (runner->key == cur->key)
+            {
+                // delete node
+                runner->prev->next = runner->next;
+                runner->next->prev = runner->prev;
+                free(runner);
+            }
+            runner = next;
         }
-        else
-        {
-            map[cur->key]++;
-        }
-        cur = next;
+        cur = cur->next;
     }
 
     // output
