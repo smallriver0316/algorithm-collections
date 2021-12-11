@@ -36,8 +36,12 @@ It removes duplicated elements from an unsorted linked list.
 ```bash
 $ g++ unique_linked_list1.cpp
 $ ./a.out
+# input
+# initial input is number of node in linked list
 7
+# second inputs are nodes in linked list
 1 2 3 2 4 1 8
+# result
 1 2 3 4 8
 ```
 
@@ -45,3 +49,21 @@ unique_linked_list1.cpp takes O(N) as functional order, but requires O(N) as mem
 
 unique_linked_list2.cpp uses runner method for linked list, which is just twice loop for linked list.
 It takes O(N2) as functional order, but requires only O(1) as memory cost.
+
+## Count From Last
+
+It output k-th node from end of single oriented linked list.
+
+```bash
+$ g++ count_from_end.cpp
+$ ./a.out
+# input
+# first input is number of node
+5
+# second inputs are nodes of linked list
+5 4 3 2 1
+# third input is k
+3
+# result
+3
+```
