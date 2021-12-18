@@ -50,7 +50,7 @@ unique_linked_list1.cpp takes O(N) as functional order, but requires O(N) as mem
 unique_linked_list2.cpp uses runner method for linked list, which is just twice loop for linked list.
 It takes O(N2) as functional order, but requires only O(1) as memory cost.
 
-## Count From Last
+## Count From End
 
 It output k-th node from end of single oriented linked list.
 
@@ -66,4 +66,24 @@ $ ./a.out
 3
 # result
 3
+```
+
+This program also uses runner technique, so its performance cost is O(N).
+
+## Delete Node
+
+It deletes nodes in single oriented linked list.
+
+```bash
+$ g++ delete_node.cpp
+$ ./a.out
+# input
+# first input is number of node
+5
+# second inputs are nodes of linked list
+1 2 3 4 5
+# third input is key of node to be deleted
+4
+# result
+1 2 3 5
 ```
