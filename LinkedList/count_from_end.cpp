@@ -14,7 +14,7 @@ int main()
     nil->next = nil;
 
     cin >> n;
-    Node *cur = nil->next;
+    Node *cur = nil;
     for (int i = 0; i < n; i++)
     {
         cin >> key;

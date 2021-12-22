@@ -11,8 +11,8 @@ int main()
 {
     int n, key;
     Node *nil = (Node *)malloc(sizeof(Node));
-    nil->next = nil;
 
+    // input
     cin >> n;
     Node *cur = nil;
     for (int i = 0; i < n; i++)
@@ -25,18 +25,26 @@ int main()
         cur = cur->next;
     }
 
-    int target;
-    cin >> target;
+    int pvt; // pivot
+    cin >> pvt;
 
+    // make partition
+    Node *head = (Node *)malloc(sizeof(Node));
+    Node *tail = head;
     Node *pt1 = nil->next;
     Node *pt2 = nil;
     while (pt1 != nil)
     {
-        if (pt1->key == target)
+        if (pt1->key < pvt)
         {
+            // remove pt1 node from input linked list
             pt2->next = pt1->next;
-            free(pt1);
-            // when delete pt1, it doesn't proceed pt2, because the node next to deleted node may be deleting target
+            // add pt1 to output linked list
+            tail->next = pt1;
+            pt1->next = head;
+            // update tail
+            tail = pt1;
+            // update pt1
             pt1 = pt2->next;
         }
         else
@@ -45,10 +53,13 @@ int main()
             pt2 = pt2->next;
         }
     }
+    // connect remained linked list to the end of output liked list
+    tail->next = nil->next;
+    pt2->next = head;
 
     // output
-    cur = nil->next;
-    while (cur != nil)
+    cur = head->next;
+    while (cur != head)
     {
         cout << cur->key << " ";
         cur = cur->next;

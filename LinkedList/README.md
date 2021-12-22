@@ -78,7 +78,7 @@ It deletes nodes in single oriented linked list.
 $ g++ delete_node.cpp
 $ ./a.out
 # input
-# first input is number of node
+# first input is number of nodes
 5
 # second inputs are nodes of linked list
 1 2 3 4 5
@@ -86,4 +86,23 @@ $ ./a.out
 4
 # result
 1 2 3 5
+```
+
+## Partition
+
+It moves nodes the key of which is less than a given pivot value to left side against the pivot in single oriented linked list.
+But it is not necessary to sort nodes in ascending order.
+
+```bash
+$ g++ partiion.cpp
+$ ./a.out
+# input
+# first input is number of nodes
+7
+# second inputs are nodes of linked list
+3 5 8 5 10 2 1
+# third input is value of pivot
+5
+# result
+3 2 1 5 8 5 10
 ```
