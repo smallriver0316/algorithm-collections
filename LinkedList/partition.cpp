@@ -56,6 +56,7 @@ int main()
     // connect remained linked list to the end of output liked list
     tail->next = nil->next;
     pt2->next = head;
+    free(nil);
 
     // output
     cur = head->next;

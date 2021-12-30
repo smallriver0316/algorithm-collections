@@ -106,3 +106,32 @@ $ ./a.out
 # result
 3 2 1 5 8 5 10
 ```
+
+## Addition
+
+It calculates sum of two numbers that are represented single oriented linked list.
+
+The each digit in the number will be one node of linked list, and arranged from small digit.
+
+For example, 714 is 4->1->7.
+
+The output of this program is also represented in the same way.
+
+```bash
+$ g++ addition1.cpp
+$ ./a.out
+# first input is digit of the first number
+3
+# second input is linked list of the first number
+# this reporesents 617(7->1->6).
+7 1 6
+# third input is digit of the second number
+3
+# forth input is linked list of the second number
+# this represents 295(5->9->2).
+5 9 2
+
+# result
+# this represents 912(2->1->9).
+2 1 9
+```
