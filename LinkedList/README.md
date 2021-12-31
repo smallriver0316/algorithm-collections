@@ -111,7 +111,9 @@ $ ./a.out
 
 It calculates sum of two numbers that are represented single oriented linked list.
 
-The each digit in the number will be one node of linked list, and arranged from small digit.
+The each digit in the number will be one node of linked list,
+so the key of node must be single digit,
+and arranged from small digit.
 
 For example, 714 is 4->1->7.
 

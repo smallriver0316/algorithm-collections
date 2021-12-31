@@ -11,19 +11,24 @@ void addLinkedList(Node *list1, Node *list2) {
   Node *runner1 = list1->next;
   Node *runner2 = list2->next;
   nil->next = nil;
-  unsigned int up = 0;
+  unsigned int carry = 0;
 
   Node *cur = nil;
-  while (runner1 != list1 && runner2 != list2) {
+  while (runner1 != list1 || runner2 != list2 || carry != 0) {
     Node *x = (Node*)malloc(sizeof(Node));
-    int sum = runner1->key + runner2->key + up;
-    up = sum / 10;
-    x->key = sum - up * 10;
+    int sum = carry;
+    if (runner1 != list1) {
+      sum += runner1->key;
+      runner1 = runner1->next;
+    }
+    if (runner2 != list2) {
+      sum += runner2->key;
+      runner2 = runner2->next;
+    }
+    carry = sum / 10;
+    x->key = sum % 10;
     cur->next = x;
     x->next = nil;
-
-    runner1 = runner1->next;
-    runner2 = runner2->next;
     cur = cur->next;
   }
 
