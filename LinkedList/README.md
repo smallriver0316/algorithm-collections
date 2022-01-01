@@ -122,7 +122,7 @@ The output of this program is also represented in the same way.
 ```bash
 $ g++ addition1.cpp
 $ ./a.out
-# first input is digit of the first number
+
 3
 # second input is linked list of the first number
 # this reporesents 617(7->1->6).
@@ -136,4 +136,25 @@ $ ./a.out
 # result
 # this represents 912(2->1->9).
 2 1 9
+```
+
+addition2.cpp deals linked lists of the inverted order, such as 7->1->4 represinting 714.
+
+```bash
+$ g++ addition2.cpp
+$ ./a.out
+# first input is digit of the first number
+3
+# second input is linked list of the first number
+# this reporesents 617(6->1->7).
+6 1 7
+# third input is digit of the second number
+3
+# forth input is linked list of the second number
+# this represents 592(5->9->2).
+5 9 2
+
+# result
+# this represents 1209(1->2->0->9).
+1 2 0 9
 ```
