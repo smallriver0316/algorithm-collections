@@ -158,3 +158,25 @@ $ ./a.out
 # this represents 1209(1->2->0->9).
 1 2 0 9
 ```
+
+## Palindrome
+
+It distinguishes whether a given single oriented linked list represents palindrome.
+
+There are several ways to solve this problem.
+For example, creating stack or making inversed linked list of original one.
+But here is implemented with recursive processing.
+
+This program assumes that the given linked list is composed of integer.
+
+```bash
+$ g++ palindrome.cpp
+$ ./a.out
+# first input is length of linked list
+5
+# second inputs are nodes of linked list
+1 2 3 2 1
+
+# result
+True
+```

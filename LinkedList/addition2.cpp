@@ -36,34 +36,39 @@ int calcCarry(Node *list1, Node* list2, Node *anchor1, Node *anchor2) {
   return sum / 10;
 }
 
-Node* addLinkedList(Node *list1, Node *list2) {
+Node* addLinkedList(Node *list1, Node *list2, int digit) {
   Node *head = (Node *)malloc(sizeof(Node));
   head->next = head;
   Node *runner1 = list1;
   Node *runner2 = list2;
   Node *runner3 = head;
 
-  unsigned int carry = calcCarry(runner1, runner2, list1, list2);
-  if (carry > 0) {
-    Node *x = (Node*)malloc(sizeof(Node));
-    x->key = carry;
-    runner3->next = x;
-    x->next = head;
-    runner3 = runner3->next;
-  }
-  runner1 = runner1->next;
-  runner2 = runner2->next;
+  // increment +1 in order to deal with carry of largest digit
+  int counter = digit + 1;
 
-  while (runner1 != list1 || runner2 != list2) {
-    carry = calcCarry(runner1, runner2, list1, list2);
-    int sum = runner1->key + runner2->key + carry;
-    Node *x = (Node*)malloc(sizeof(Node));
-    x->key = sum % 10;
-    runner3->next = x;
-    x->next = head;
+  while (counter > 0) {
+    unsigned int carry = calcCarry(runner1, runner2, list1, list2);
+    unsigned int sum = carry;
+    if (runner1 != list1) {
+      sum += runner1->key;
+    }
+    if (runner2 != list2) {
+      sum += runner2->key;
+    }
+
+    if (sum > 0) {
+      Node *x = (Node*)malloc(sizeof(Node));
+      x->key = sum % 10;
+      runner3->next = x;
+      x->next = head;
+
+      runner3 = runner3->next;
+    }
+
     runner1 = runner1->next;
     runner2 = runner2->next;
-    runner3 = runner3->next;
+
+    counter--;
   }
 
   return head;
@@ -101,7 +106,7 @@ int main() {
   padList(head1, n2 - n1);
   padList(head2, n1 - n2);
 
-  Node *output = addLinkedList(head1, head2);
+  Node *output = addLinkedList(head1, head2, n1 > n2 ? n1 : n2);
 
   printList(output);
 
