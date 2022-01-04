@@ -180,3 +180,48 @@ $ ./a.out
 # result
 True
 ```
+
+## Common Nodes
+
+It distinguishes whether given two single oriented liked lists have common nodes,
+in other words, they have intersection.
+
+When input the linked lists, it is necessary to specify length and nodes of the common part.
+But this program doesn't refer them in order to solve the problem.
+
+```bash
+$ g++ common_nodes.cpp
+$ ./a.out
+# first input is length of individual part of first linked list
+4
+# second inputs are individual nodes of first linked list
+3 1 5 9
+# third input is length of individual part of second linked list
+2
+# forth inputs are individual nodes of second linked list
+4 6
+# fifth input is length of common part of two linked lists
+3
+# sixth inputs are common nodes
+7 2 1
+
+# result
+# whether there are common nodes or not
+True
+# common nodes
+7 2 1
+```
+
+When there are no common nodes, set zero to the length of it.
+
+```bash
+$ g++ common_nodes.cpp
+$ ./a.out
+7
+3 1 5 9 7 2 1
+5
+4 6 7 2 1
+# length of common part of two linked list
+0
+False
+```
