@@ -6,15 +6,20 @@ struct Node {
   Node *next;
 };
 
+/*
+  This struct is used to both:
+  1. tell the pair of node in palindrome
+  2. inner pairs in palindrome are matched
+*/
 struct Result {
   Node* node;
   bool result;
 };
 
-Result isPalindromeRecurse(Node *node, Node *anchor, int length) {
+Result isPalindromeRecurse(Node *node, int length) {
   Result res;
-  if (node == anchor) {
-    res = { nullptr, true };
+  if (node == nullptr) {
+    res = { node, true };
   } else if (length <= 0) {
     res = { node, true };
   } else if (length == 1) {
@@ -26,7 +31,7 @@ Result isPalindromeRecurse(Node *node, Node *anchor, int length) {
     // After that, stop to decrement length.
     // Instead of decrementing length, return result including the next node of current pair node.
     // This continues to head along the linked list.
-    res = isPalindromeRecurse(node->next, anchor, length - 2);
+    res = isPalindromeRecurse(node->next, length - 2);
     if (res.result && res.node != nullptr) {
       res.result = node->key == res.node->key;
       res.node = res.node->next;
@@ -36,17 +41,14 @@ Result isPalindromeRecurse(Node *node, Node *anchor, int length) {
 }
 
 bool isPalindrome(Node *head, int length) {
-  if (length < 2) {
-    return false;
-  }
-  Result res = isPalindromeRecurse(head->next, head, length);
+  Result res = isPalindromeRecurse(head->next, length);
   return res.result;
 }
 
 int main() {
   int n, key;
   Node *nil = (Node*)malloc(sizeof(Node));
-  nil->next = nil;
+  nil->next = nullptr;
 
   cin >> n;
   Node *runner = nil;
@@ -54,8 +56,8 @@ int main() {
     cin >> key;
     Node *x = (Node*)malloc(sizeof(Node));
     x->key = key;
+    x->next = runner->next;
     runner->next = x;
-    x->next = nil;
     runner = runner->next;
   }
 

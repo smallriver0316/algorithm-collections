@@ -8,7 +8,7 @@ struct Node {
 
 void printList(Node* list) {
   Node *cur = list->next;
-  while (cur != list) {
+  while (cur != nullptr) {
     cout << cur->key << " ";
     cur = cur->next;
   }
@@ -28,26 +28,23 @@ void padList(Node* list, int size) {
   }
 }
 
-int calcCarry(Node *list1, Node* list2, Node *anchor1, Node *anchor2) {
-  if (list1->next == anchor1 || list2->next == anchor2)
+int calcCarry(Node *list1, Node* list2) {
+  if (list1->next == nullptr || list2->next == nullptr)
     return 0;
 
-  int sum = list1->next->key + list2->next->key + calcCarry(list1->next, list2->next, anchor1, anchor2);
+  int sum = list1->next->key + list2->next->key + calcCarry(list1->next, list2->next);
   return sum / 10;
 }
 
-Node* addLinkedList(Node *list1, Node *list2, int digit) {
+Node* addLinkedList(Node *list1, Node *list2) {
   Node *head = (Node *)malloc(sizeof(Node));
-  head->next = head;
+  head->next = nullptr;
   Node *runner1 = list1;
   Node *runner2 = list2;
   Node *runner3 = head;
 
-  // increment +1 in order to deal with carry of largest digit
-  int counter = digit + 1;
-
-  while (counter > 0) {
-    unsigned int carry = calcCarry(runner1, runner2, list1, list2);
+  while (runner1 != nullptr && runner2 != nullptr) {
+    unsigned int carry = calcCarry(runner1, runner2);
     unsigned int sum = carry;
     if (runner1 != list1) {
       sum += runner1->key;
@@ -59,16 +56,14 @@ Node* addLinkedList(Node *list1, Node *list2, int digit) {
     if (sum > 0) {
       Node *x = (Node*)malloc(sizeof(Node));
       x->key = sum % 10;
+      x->next = runner3->next;
       runner3->next = x;
-      x->next = head;
 
       runner3 = runner3->next;
     }
 
     runner1 = runner1->next;
     runner2 = runner2->next;
-
-    counter--;
   }
 
   return head;
@@ -78,8 +73,8 @@ int main() {
   int n1, n2, key;
   Node *head1 = (Node *)malloc(sizeof(Node));
   Node *head2 = (Node *)malloc(sizeof(Node));
-  head1->next = head1;
-  head2->next = head2;
+  head1->next = nullptr;
+  head2->next = nullptr;
 
   Node *cur = head1;
   cin >> n1;
@@ -87,8 +82,8 @@ int main() {
     cin >> key;
     Node *x = (Node *)malloc(sizeof(Node));
     x->key = key;
+    x->next = cur->next;
     cur->next = x;
-    x->next = head1;
     cur = cur->next;
   }
 
@@ -98,15 +93,15 @@ int main() {
     cin >> key;
     Node *x = (Node *)malloc(sizeof(Node));
     x->key = key;
+    x->next = cur->next;
     cur->next = x;
-    x->next = head2;
     cur = cur->next;
   }
 
   padList(head1, n2 - n1);
   padList(head2, n1 - n2);
 
-  Node *output = addLinkedList(head1, head2, n1 > n2 ? n1 : n2);
+  Node *output = addLinkedList(head1, head2);
 
   printList(output);
 
