@@ -225,3 +225,24 @@ $ ./a.out
 0
 False
 ```
+
+## Loop
+
+When given single oriented liked list with loop,
+it finds the start of loop.
+
+In this problem, loop means that the end of list is connected to one of the nodes.
+
+```bash
+$ g++ loop.cpp
+$ ./a.out
+# first input is number of nodes
+7
+# second inputs are nodes
+1 2 3 4 5 6 7
+# third input is index of loop start node
+3
+
+# result is the key of loop start node
+4
+```
