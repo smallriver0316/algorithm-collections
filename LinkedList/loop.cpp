@@ -25,7 +25,8 @@ Node *findLoop(Node *head) {
     fast_runner = fast_runner->next->next;
   }
 
-  // After that, if fast_runner moves k steps by one node, it will reach the start of loop; (loop size - k) + k = loop size.
+  // After that, if fast_runner moves k steps by one node, it will reach the start of loop.
+  // (loop size - k) + k = loop size, this means fast_runner will be back the start of loop after k steps by one node.
   // Therefore, set slow_runner to the head of linked list again and move both of runners by one node.
   // When they meets again, the node must be loop start position.
   slow_runner = head;
@@ -40,6 +41,7 @@ Node *findLoop(Node *head) {
 int main() {
   int n, key, k;
   Node *head = (Node *)malloc(sizeof(Node));
+  head->next = nullptr;
 
   cin >> n;
   Node *runner = head;
@@ -47,11 +49,10 @@ int main() {
     cin >> key;
     Node *x = (Node *)malloc(sizeof(Node));
     x->key = key;
+    x->next = runner->next;
     runner->next = x;
     runner = runner->next;
   }
-
-  runner->next = nullptr;
 
   cin >> k;
   if (k > n - 1) {
