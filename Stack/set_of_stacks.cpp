@@ -109,6 +109,7 @@ public:
       Node *tmp = top;
       top = top->next;
       free(tmp);
+      size--;
     }
     return top->stack.pop();
   }
