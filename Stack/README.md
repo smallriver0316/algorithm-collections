@@ -28,9 +28,9 @@ another is one of using array of variable size.
 ```bash
 $ g++ fixed_multiple_stacks.cpp
 $ ./a.out
-# firstinput is number of items to be stacked
+# first input is number of items to be stacked
 10
-# seconds inputs are pair of stack index and item to be stacked
+# second inputs are pair of stack index and item to be stacked
 0 1
 1 2
 2 3
@@ -45,6 +45,38 @@ $ ./a.out
 1 7 4 1
 8 5 2
 9 6 3
+```
+
+In variable_multiple_stacks.cpp, total size of stack capacity is set to 15.
+The number of stacks is 3, so capacity of each stack has 5 as default size.
+
+Following is demonstration that the capacity of each stack can be changed within total capacity.
+
+```bash
+$ g++ variable_multiple_stacks.cpp
+$ ./a.out
+# first input is number of items to be stacked
+15
+# second inputs are pair of stack index and item to be stacked
+0 1
+0 2
+0 3
+0 4
+0 5
+1 6
+1 7
+1 8
+1 9
+1 10
+2 11
+2 13
+2 14
+0 15
+0 16
+# results, items in each stack, obtained by pop()
+16 15 5 4 3 2 1
+10 9 8 7 6
+14 13 11
 ```
 
 ## Stack with minimum value
