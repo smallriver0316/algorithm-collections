@@ -79,7 +79,7 @@ $ ./a.out
 14 13 11
 ```
 
-## Stack with minimum value
+## Stack with Minimum Value
 
 It is implementation of stack which returns the minimum value.
 The performance cost to returning minimum value must be O(1).
@@ -103,4 +103,25 @@ $ ./a.out
 3
 3
 8
+```
+
+## Set of Stacks
+
+It is implementation of stack of stacks.
+
+When stacking and make one stack full, this program creates a new stack instance.
+Each stack is also stacked.
+
+This is demonstration of stacking stack.
+The capacity of a stack is 5, so stacking 8 items creates another stack instance.
+
+```bash
+$ g++ set_of_stacks.cpp
+$ ./a.out
+# first input is number of stacked items
+8
+# second inputs are stacked items
+1 2 3 4 5 6 7 8
+# result items obtained by pop()
+8 7 6 5 4 3 2 1
 ```
