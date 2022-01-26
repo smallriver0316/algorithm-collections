@@ -72,13 +72,28 @@ struct Node
 class SetOfStacks
 {
   Node *top;
-  int size;
 
 public:
   SetOfStacks()
   {
-    size = 1;
     top = (Node *)malloc(sizeof(Node));
+    top->next = nullptr;
+  }
+
+  bool isEmpty()
+  {
+    if (top == nullptr)
+    {
+      return true;
+    }
+    else if (top->next == nullptr)
+    {
+      return top->stack.isEmpty();
+    }
+    else
+    {
+      return false;
+    }
   }
 
   void push(int x)
@@ -89,7 +104,6 @@ public:
       node->stack.push(x);
       node->next = top;
       top = node;
-      size++;
     }
     else
     {
@@ -99,7 +113,7 @@ public:
 
   int pop()
   {
-    if (size == 1 && top->stack.isEmpty())
+    if (isEmpty())
     {
       cout << "[ERROR] Set of stack is empty" << endl;
       throw "[ERROR] Set of stack is empty";
@@ -109,14 +123,13 @@ public:
       Node *tmp = top;
       top = top->next;
       free(tmp);
-      size--;
     }
     return top->stack.pop();
   }
 
   int peek()
   {
-    if (size == 1 && top->stack.isEmpty())
+    if (isEmpty())
     {
       cout << "[ERROR] Set of stack is empty" << endl;
       throw "[ERROR] Set of stack is empty";

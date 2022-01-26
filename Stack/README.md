@@ -1,4 +1,4 @@
-# Stack and Queue
+# Stack
 
 ## Reverse Polish Notation
 
