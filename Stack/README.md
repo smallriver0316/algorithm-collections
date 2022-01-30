@@ -128,6 +128,32 @@ $ ./a.out
 
 ## Queue composed of Stack
 
+It is implementation of queue with stack.
+It is allowed to use two stacks to implement the queue.
+
+```bash
+$ g++ queue.cpp
+$ ./a.out
+# first input is number of input items
+10
+# second inputs are pairs of command and item, but dequeue command doesn't have paired item
+# commands are only enqueue and dequeue
+enqueue 2
+enqueue 8
+enqueue 6
+dequeue
+dequeue: 2
+enqueue 3
+enqueue 1
+enqueue 3
+dequeue
+dequeue: 8
+enqueue 5
+enqueue 7
+# result, items obtained by dequeue()
+6 3 1 3 5 7
+```
+
 ## Sort Stack
 
 It is implementation of sorting stack.
