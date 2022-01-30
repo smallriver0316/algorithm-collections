@@ -122,6 +122,31 @@ $ ./a.out
 8
 # second inputs are stacked items
 1 2 3 4 5 6 7 8
-# result items obtained by pop()
+# result, items obtained by pop()
 8 7 6 5 4 3 2 1
 ```
+
+## Queue composed of Stack
+
+## Sort Stack
+
+It is implementation of sorting stack.
+
+This stack must have sorted items in ascending order,
+so the top item must be the least one.
+
+Furthermore, in order to sort it, it is allowed to use only another stack.
+
+```bash
+$ ./sort_stack1.cpp
+$ ./a.out
+# first input is number of stacked items
+10
+# second inputs are stacked items
+5 8 3 7 5 1 2 9 4 6
+# result, items obtained by pop()
+1 2 3 4 5 5 6 7 8 9
+```
+
+sort_stack2.cpp executes sorting when input stacked items.
+But the algorithm is same as sort_stack1.cpp in essence.
