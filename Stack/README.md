@@ -30,7 +30,7 @@ $ g++ fixed_multiple_stacks.cpp
 $ ./a.out
 # first input is number of items to be stacked
 10
-# second inputs are pair of stack index and item to be stacked
+# second inputs are pairs of stack index and item to be stacked
 0 1
 1 2
 2 3
@@ -57,7 +57,7 @@ $ g++ variable_multiple_stacks.cpp
 $ ./a.out
 # first input is number of items to be stacked
 15
-# second inputs are pair of stack index and item to be stacked
+# second inputs are pairs of stack index and item to be stacked
 0 1
 0 2
 0 3

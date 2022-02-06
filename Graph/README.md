@@ -5,14 +5,14 @@
 It outputs start and end timestamps against each vertex of a given graph when depth first search.
 
 In depth first search, connected vertices are visited preferentially from one to the next.
-After all connected are visited, shift the next unvisited vertices.
-These processes are achieved with Stack.
+After all connected vertices are visited, shift the next unvisited vertices.
+This process is achieved with Stack.
 
 The graph is an oriented graph.
 Vertices of the given graph have numbers which start from 1 to n and they are sequential.
 
-In depth first search, start timestamp will be the time when the search tracer visits the veritex for the fist time,
-and end timestamp will be the time when the tracer come back to the vertex after finished searching all of the adjacent vertices.
+In depth first search, start timestamp is the time when the search tracer visits the vertex for the fist time,
+and end timestamp is the time when the tracer comes back to the vertex after finished searching all of the adjacent vertices.
 
 Timestamp is incremented sequentially one by one.
 
@@ -22,7 +22,7 @@ $ ./a.out
 # initial input is number of vertex
 6
 # second input is adjacent list of graph
-# vertex number, number of adjacent vertices, adjacent vertex(v1, v2, ...)
+# vertex number, number of adjacent vertices, adjacent vertices(v1, v2, ...)
 1 2 2 3
 2 2 3 4
 3 1 5
@@ -42,7 +42,7 @@ $ ./a.out
 
 ## Breadth First Search
 
-It outputs distance from the first vertex to each vertex in a given graph.
+It outputs distances from the first vertex to each vertex in a given graph.
 
 The graph is an oriented graph.
 Vertices of the given graph have numbers which start from 1 to n and they are sequential.
@@ -53,7 +53,7 @@ $ ./a.out
 # initial input is number of vertices
 4
 # second input is adjacent list of graph
-# vertex number, number of adjacent vertices, adjacent vertex(v1, v2, ...)
+# vertex number, number of adjacent vertices, adjacent vertices(v1, v2, ...)
 1 2 2 4
 2 1 4
 3 0
@@ -83,7 +83,7 @@ $ g++ connected_components.cpp
 $ ./a.out
 # initial input is number of vertices and number of connections
 10 9
-# second input is connection of vertices
+# second inputs are connections of vertices
 0 1
 0 2
 3 4
@@ -111,34 +111,40 @@ no
 It calculates minimum spanning tree(MST) from a given weighted graph
 and output the total weight of it.
 
-Tree is graph which has no closed path, and tree which has pathes to all the vertices is called spanning tree.
+Tree is graph which has no closed path, and tree with pathes to all the vertices is called spanning tree.
 MST is one of which total weights of the edges become minumum value.
 
 ```bash
 $ g++ minimum_spanning_tree1.cpp
 $ ./a.out
+# first input is number of vertices
 5
+# second input is adjacent list of graph, but the elements are weights of the edges
 -1 2 3 1 -1
 2 -1 -1 4 -1
 3 -1 -1 1 1
 1 4 1 -1 3
 -1 -1 1 3 -1
-5
-```
-
-```bash
-$ g++ minimum_spanning_tree2.cpp
-$ ./a.out
-5
--1 2 3 1 -1
-2 -1 -1 4 -1
-3 -1 -1 1 1
-1 4 1 -1 3
--1 -1 1 3 -1
+# result, sum of weights in MST
 5
 ```
 
 minimum_spanning_tree2.cpp uses prim's algorithm.
+
+```bash
+$ g++ minimum_spanning_tree2.cpp
+$ ./a.out
+# first input is number of vertices
+5
+# second input is adjacent list of graph, but the elements are weights of the edges
+-1 2 3 1 -1
+2 -1 -1 4 -1
+3 -1 -1 1 1
+1 4 1 -1 3
+-1 -1 1 3 -1
+# result, sum of weights in MST
+5
+```
 
 Both programs separate vertices into two group, ones inside MST and others outside MST,
 and try to find minimum weight between them and to make a vertex of the minimum weight included into MST one by one.

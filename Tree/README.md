@@ -4,7 +4,8 @@
 
 It is implementation of rooted tree.
 
-Inputs are node ID, number of the siblings(degree of node) and IDs of the siblings.
+Inputs are node ID, number of children nodes(degree of node) and IDs of the children.
+The nodes of children in the inputs are supporsed to be arranged in an order from left to right.
 
 Outputs are information of each node as below.
 

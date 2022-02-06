@@ -67,7 +67,7 @@ int main()
     {
         cin >> s >> t;
         G[s].push_back(t);
-        G[s].push_back(s);
+        G[t].push_back(s);
     }
 
     dfs();
