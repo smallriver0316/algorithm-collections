@@ -76,6 +76,7 @@ int main()
     int u, k, v;
 
     cin >> n;
+
     // initialization
     for (int i = 0; i < n; i++)
     {
@@ -83,6 +84,7 @@ int main()
             M[i][j] = 0;
     }
 
+    // input
     for (int i = 0; i < n; i++)
     {
         cin >> u >> k;

@@ -79,7 +79,7 @@ The graph is a non-oriented graph.
 Vertices of the given graph have numbers which start from 0 to (n-1) and they are sequential.
 
 ```bash
-$ g++ connected_components.cpp
+$ g++ connected_components1.cpp
 $ ./a.out
 # initial input is number of vertices and number of connections
 10 9
@@ -104,6 +104,33 @@ yes
 yes
 1 3
 no
+```
+
+connected_components2.cpp recieves an oriented graph as input.
+The number of vertices are sequential from 1 to n.
+
+```bash
+$ g++ connected_components2.cpp
+$ ./a.out
+# first input is number of vertices
+6
+# second input is adjacent list of graph
+1 2 2 3
+2 2 3 4
+3 1 5
+4 1 6
+5 1 6
+6 0
+# third input is number of questions
+3
+# pair of vertices which is asked to be reachable
+4 5
+# result, they are reachable or not
+no
+5 6
+yes
+1 5
+yes
 ```
 
 ## Minimum Spanning Tree
