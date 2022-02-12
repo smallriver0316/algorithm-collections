@@ -137,3 +137,24 @@ $ ./a.out
 # result is Postorder
 3 4 2 5 1
 ```
+
+## Minimal Binary Search Tree
+
+It creates binary search tree of minimal depth,
+when nodes of ascending order are given as input.
+
+```bash
+$ g++ minimal_binary_search_tree.cpp
+$ ./a.out
+# first input is number of nodes
+6
+# second inputs are nodes that must be in ascending order.
+1 2 3 4 5 6
+# result
+index 0: key = 1, parent = 1, sibling = 0, degree = 0, leaf
+index 1: key = 2, parent = 3, sibling = 1, degree = 2, internal node
+index 2: key = 3, parent = 1, sibling = 2, degree = 0, leaf
+index 3: key = 4, parent = -1, sibling = -1, degree = 2, root
+index 4: key = 5, parent = 5, sibling = 4, degree = 0, leaf
+index 5: key = 6, parent = 3, sibling = 5, degree = 1, internal node
+```
