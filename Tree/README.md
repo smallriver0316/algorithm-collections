@@ -158,3 +158,27 @@ index 3: key = 4, parent = -1, sibling = -1, degree = 2, root
 index 4: key = 5, parent = 5, sibling = 4, degree = 0, leaf
 index 5: key = 6, parent = 3, sibling = 5, degree = 1, internal node
 ```
+
+## Depth Linked List
+
+It creates linked lists from a given binary search tree.
+Each linked list must be composed of the nodes of the same depth.
+
+```bash
+$ g++ depth_linked_list.cpp
+$ ./a.out
+# first input is number of node
+7
+# second inputs are each node information, key, left child index, right child index
+0 -1 -1
+1 0 2
+2 -1 -1
+3 1 5
+4 -1 -1
+5 4 6
+6 -1 -1
+# result, linked list of each depth
+depth0: 3
+depth1: 1 5
+depth2: 0 2 4 6
+```
