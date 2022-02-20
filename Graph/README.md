@@ -202,12 +202,16 @@ Limitation is below.
 ```bash
 $ g++ single_source_shortest_path1.cpp
 $ ./a.out
+# first input is number of vertices
 5
+# second input is adjacent list of graph
+# each node, number of the connections, adjacent node, weight of the edge, ...
 0 3 2 3 3 1 1 2
 1 2 0 2 3 4
 2 3 0 3 3 1 4 1
 3 4 2 1 0 1 1 4 4 3
 4 2 2 1 3 3
+# result, distance from node 0 to each node
 0 0
 1 2
 2 2
@@ -221,12 +225,16 @@ It is the same as minimum spanning tree (MST) in essence.
 ```bash
 $ g++ single_source_shortest_path2.cpp
 $ ./a.out
+# first input is number of vertices
 5
+# second input is adjacent list of graph
+# each node, number of the connections, adjacent node, weight of the edge, ...
 0 3 2 3 3 1 1 2
 1 2 0 2 3 4
 2 3 0 3 3 1 4 1
 3 4 2 1 0 1 1 4 4 3
 4 2 2 1 3 3
+# result, distance from node 0 to each node
 0 0
 1 2
 2 2
@@ -244,15 +252,38 @@ single_source_shortest_path3.cpp uses Dijkstra's algorithm with priority queue a
 ```bash
 $ g++ single_source_shortest_path3.cpp
 $ ./a.out
+# first input is number of vertices
 5
+# second input is adjacent list of graph
+# each node, number of the connections, adjacent node, weight of the edge, ...
 0 3 2 3 3 1 1 2
 1 2 0 2 3 4
 2 3 0 3 3 1 4 1
 3 4 2 1 0 1 1 4 4 3
 4 2 2 1 3 3
+# result, distance from node 0 to each node
 0 0
 1 2
 2 2
 3 1
 4 3
 ```
+
+### Dijkstra's Algorithm
+
+Dijksta's algorithm is generally used to find the shortest path from one vertex to another in graph.
+When the pursuer visits each vertex, it records two things.
+
+- the minimum distance from the start vertex
+- whether the vertex is visited or not
+
+The distance to the current vertex is calculated as sum of the weight of the edge and distance to the previous vertex.
+After that, it visits an unvisited vertex from the current minimum path and do as same until it reaches the destination.
+
+Using priority queue makes Dijkstra's algorithm more efficient.
+Getting an item with the highest priority from the queue takes O(|V|) and this is repeated |V| times.
+Furthermore, updating weight and visited or not takes O(|E|), this is taken against each edge, but the number of edges would be smaller than the number of the vertices. So it can be disregarded.
+So total cost is O((|V| + |E|)|V|), almost equal to O(|V|2).
+
+In case that the priority queue is implemented with minimum heap, getting an item takes O(log|V|).
+So total performance cost is O((|V| + |E|)log|V|).
