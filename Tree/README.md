@@ -182,3 +182,28 @@ depth0: 3
 depth1: 1 5
 depth2: 0 2 4 6
 ```
+
+## Check Balanced Binary Tree
+
+It checks whether a given tree is balanced binary tree or not.
+Balanced binary tree is defined as a tree that heights of partial trees against every node is same or different only by one.
+
+```bash
+$ g++ check_balance.cpp
+$ ./a.out
+# first input is number of node
+6
+# second inputs are each node information, key, left child index, right child index
+0 -1 -1
+1 0 -1
+2 -1 -1
+3 1 2
+4 3 5
+5 -1 -1
+# result, balanced binary tree or not
+Unbalanced Tree
+```
+
+This algorithm calculates the height of tree with recursive processing.
+It takes performance cost of O(N) and spatial cost of O(H).
+N is number of nodes, H is height of tree.
