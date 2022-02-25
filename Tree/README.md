@@ -207,3 +207,44 @@ Unbalanced Tree
 This algorithm calculates the height of tree with recursive processing.
 It takes performance cost of O(N) and spatial cost of O(H).
 N is number of nodes, H is height of tree.
+
+## Check Binary Search Tree
+
+It checks whether a given tree is binary search tree or not.
+Binary search tree is defined as a tree in which the left children are no more than the parent node and the right children are more than the parent node.
+
+```bash
+$ g++ check_binary_search_tree1.cpp
+$ ./.out
+# first input is number of node
+8
+# second inputs are each node information, key, left child index, right child index
+3 -1 -1
+5 0 2
+7 -1 -1
+10 1 4
+15 -1 5
+17 -1 -1
+20 3 7
+30 -1 -1
+# result
+BST
+```
+
+check_binary_search_tree2.cpp is almost same.
+
+```bash
+$ g++ check_binary_search_tree2.cpp
+$ ./.out
+# first input is number of node
+4
+# second inputs are each node information, key, left child index, right child index
+25 -1 -1
+10 -1 0
+20 1 3
+30 -1 -1
+# result
+Not BST
+```
+
+These algorithms check all nodes, so the performance cost is O(N).
