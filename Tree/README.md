@@ -248,3 +248,40 @@ Not BST
 ```
 
 These algorithms check all nodes, so the performance cost is O(N).
+
+## Next Node in Binary Search Tree
+
+It outputs the next node of a given node in binary search tree.
+
+This next node is the next node in inorder tree walk.
+
+```bash
+$ next_node.cpp
+$ ./a.out
+# first input is number of tree nodes
+9
+# second input is tree information, node index, left child index, right child index
+0 1 4
+1 2 3
+2 -1 -1
+3 -1 -1
+4 5 8
+5 6 7
+6 -1 -1
+7 -1 -1
+8 -1 -1
+# third input is number of questions
+3
+# fourth input is target node index
+1
+# result is the next node
+3
+# target node
+3
+# next
+0
+# target node
+4
+# next node
+8
+```
