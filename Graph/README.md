@@ -2,7 +2,7 @@
 
 ## Depth First Search
 
-It outputs start and end timestamps against each vertex of a given graph when depth first search.
+This program outputs start and end timestamps against each vertex of a given graph when depth first search.
 
 In depth first search, connected vertices are visited preferentially from one to the next.
 After all connected vertices are visited, shift the next unvisited vertices.
@@ -42,7 +42,7 @@ $ ./a.out
 
 ## Breadth First Search
 
-It outputs distances from the first vertex to each vertex in a given graph.
+This program outputs distances from the first vertex to each vertex in a given graph.
 
 The graph is an oriented graph.
 Vertices of the given graph have numbers which start from 1 to n and they are sequential.
@@ -73,7 +73,7 @@ These processes are acheived with Queue.
 
 ## Connected Components
 
-It outputs whether given pairs of vertices in Graph are reachable.
+This program outputs whether given pairs of vertices in Graph are reachable.
 
 The graph is a non-oriented graph.
 Vertices of the given graph have numbers which start from 0 to (n-1) and they are sequential.
@@ -135,7 +135,7 @@ yes
 
 ## Minimum Spanning Tree
 
-It calculates minimum spanning tree(MST) from a given weighted graph
+This program calculates minimum spanning tree(MST) from a given weighted graph
 and output the total weight of it.
 
 Tree is graph which has no closed path, and tree with pathes to all the vertices is called spanning tree.
@@ -185,7 +185,7 @@ Functional orders of them are roughly O(N2).
 
 ## Single Source Shortest Path
 
-It calculates minimum distance from vertex 0 to each vertex in a given graph.
+This program calculates minimum distance from vertex 0 to each vertex in a given graph.
 
 The graph is an oriented graph with weight on the edges.
 The vertices have numbers which start from 0 to (n-1) and they are sequential.
@@ -287,3 +287,52 @@ So total cost is O((|V| + |E|)|V|), almost equal to O(|V|2).
 
 In case that the priority queue is implemented with minimum heap, getting an item takes O(log|V|).
 So total performance cost is O((|V| + |E|)log|V|).
+
+## Make Order
+
+This program outputs a possible execution sequence of given projects.
+
+The projects are reqresented as alphabet.
+Pairs of two projects are also given as dependance relationship.
+
+For example, (a, b) means that project a must be executed before project b.
+
+```bash
+$ g++ make_order1.cpp
+$ ./a.out
+# first input is number of projects
+6
+# second inputs are projects
+a b c d e f
+# third input is number of dependance relationships
+5
+# fourth inputs are dependance relationships
+d a
+b f
+d b
+a f
+c d
+# result is execution sequence
+e f a b d c
+```
+
+make_order2.cpp uses depth first search.
+
+```bash
+$ g++ make_order2.cpp
+$ ./a.out
+# first input is number of projects
+6
+# second inputs are projects
+a b c d e f
+# third input is number of dependance relationships
+5
+# fourth inputs are dependance relationships
+d a
+b f
+d b
+a f
+c d
+# result is execution sequence
+f e b a d c
+```

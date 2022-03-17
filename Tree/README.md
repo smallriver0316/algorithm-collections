@@ -278,7 +278,7 @@ $ ./a.out
 3
 # target node
 3
-# next
+# next node
 0
 # target node
 4
