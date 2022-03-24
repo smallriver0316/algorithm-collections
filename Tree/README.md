@@ -119,6 +119,11 @@ Postorder
 2 3 1 6 7 5 8 4 0
 ```
 
+### Search in Tree
+
+When searching a node in tree, it would be useful to use recurcive processing.
+Other than binary search tree(BST), it is difficult to figure out where a target node is in left or right siblings or children of them. So it is required to do the recursive processing against each partial tree agaist left or right siblings. This enables the search with short codes and high performance.
+
 ## Reconstruction of Tree
 
 It reconstructs binary tree.
@@ -284,4 +289,78 @@ $ ./a.out
 4
 # next node
 8
+```
+
+## Initial Common Ancestor
+
+This program outputs the initial common ancestor of given two nodes in binary tree.
+
+This tree doesn't always have to be binary search tree, so the order of nodes is not fixed.
+
+Index of each node is supposed to be sequential integer from 0 for convenience.
+
+initial_common_ancestor1.cpp uses depth of each target.
+
+```bash
+$ g++ initial_common_ancestor1.cpp
+$ ./a.out
+# first input is number of tree nodes
+8
+# second input is node information; node index, left child index, right child index
+0 -1 -1
+1 0 2
+2 -1 -1
+3 1 4
+4 -1 5
+5 -1 -1
+6 3 7
+7 -1 -1
+# third inputs are two target nodes
+2 4
+# result is initial common ancestor of the targets
+3
+```
+
+initial_common_ancestor2.cpp uses link to parent node of each target.
+
+```bash
+$ g++ initial_common_ancestor2.cpp
+$ ./a.out
+# first input is number of tree nodes
+8
+# second input is node information; node index, left child index, right child index
+0 -1 -1
+1 0 2
+2 -1 -1
+3 1 4
+4 -1 5
+5 -1 -1
+6 3 7
+7 -1 -1
+# third inputs are two target nodes
+2 5
+# result is initial common ancestor of the targets
+3
+```
+
+initial_common_ancestor3.cpp searches the ancestor from the root of tree.
+
+```bash
+$ g++ initial_common_ancestor2.cpp
+$ ./a.out
+# first input is number of tree nodes
+8
+# second input is node information; node index, left child index, right child index
+0 -1 -1
+1 0 2
+2 -1 -1
+3 1 4
+4 -1 5
+5 -1 -1
+6 3 7
+7 -1 -1
+# third inputs are two target nodes
+0 3
+# result is initial common ancestor of the targets
+3
 ```
