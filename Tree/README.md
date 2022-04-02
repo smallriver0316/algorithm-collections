@@ -364,3 +364,82 @@ $ ./a.out
 # result is initial common ancestor of the targets
 3
 ```
+
+## Array from BST
+
+This program outputs all arrays which can create a given Binary Search Tree.
+
+When creating a BST, the root node must be given at first.
+But the child nodes; left and right nodes can given in any order.
+So the possible arrays are (root, left, right) or (root, right, left).
+This rule is applied to all partial trees of the BST.
+
+```bash
+$ g++ bst2array.cpp
+$ ./a.out
+# first input is number of nodes
+10
+# second input is node information; node key value, left child index, right child index
+5 -1 -1
+10 0 2
+15 -1 -1
+20 1 4
+25 -1 -1
+50 3 6
+60 -1 8
+65 -1 -1
+70 7 9
+80 -1 -1
+# result
+50 20 10 5 15 25 60 70 65 80
+50 20 10 5 15 60 25 70 65 80
+50 20 10 5 15 60 70 25 65 80
+50 20 10 5 15 60 70 65 25 80
+50 20 10 5 15 60 70 65 80 25
+50 20 10 5 60 15 25 70 65 80
+50 20 10 5 60 15 70 25 65 80
+50 20 10 5 60 15 70 65 25 80
+50 20 10 5 60 15 70 65 80 25
+50 20 10 5 60 70 15 25 65 80
+50 20 10 5 60 70 15 65 25 80
+...
+```
+
+In order to implement this algorithm, it is necessary to "weave" two arrays.
+"weave" means calculating combination of how to merge the arrays without changing the order of items in each array.
+
+This sample program is weaveList.cpp.
+
+```bash
+$ g++ weaveList.cpp
+$ ./a.out
+# first input is number of items in the first array.
+3
+# second input is the first array.
+1 2 3
+# third input is number of items in the second array.
+3
+# fourth input is the second array.
+4 5 6
+# result
+1 2 3 4 5 6
+1 2 4 3 5 6
+1 2 4 5 3 6
+1 2 4 5 6 3
+1 4 2 3 5 6
+1 4 2 5 3 6
+1 4 2 5 6 3
+1 4 5 2 3 6
+1 4 5 2 6 3
+1 4 5 6 2 3
+4 1 2 3 5 6
+4 1 2 5 3 6
+4 1 2 5 6 3
+4 1 5 2 3 6
+4 1 5 2 6 3
+4 1 5 6 2 3
+4 5 1 2 3 6
+4 5 1 2 6 3
+4 5 1 6 2 3
+4 5 6 1 2 3
+```
