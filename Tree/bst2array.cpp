@@ -66,11 +66,15 @@ vector<vector<int>> bst2array(int rootIndex)
   }
 
   vector<int> prefix;
+  // bst2array() does only pushing back root node, because root must be the first item in array.
+  // Other nodes will be pushed by weaveList().
   prefix.push_back(T[rootIndex].key);
 
   vector<vector<int>> leftVector = bst2array(T[rootIndex].l);
   vector<vector<int>> rightVector = bst2array(T[rootIndex].r);
 
+  // weaveList() can calculate all possible merged arrays of left and right vectors.
+  // So here what can be do is only to create the possible combination of left and right.
   for (int i = 0; i < leftVector.size(); i++)
   {
     for (int j = 0; j < rightVector.size(); j++)

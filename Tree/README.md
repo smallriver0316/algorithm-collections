@@ -443,3 +443,74 @@ $ ./a.out
 4 5 1 6 2 3
 4 5 6 1 2 3
 ```
+
+## Subtree Matching
+
+This program determins whether one tree is subtree of another.
+
+This program requires two tree as arguments, T1 and T2.
+T1 is larger than T2, and T2 can be subtree of T1.
+
+is_subtree1.cpp uses pre-order walk to convert tree to array.
+After that, compare two arrays.
+This takes O(N + M + NM) as performance cost.
+N and M are number of T1 and T2.
+
+```bash
+$ g++ is_subtree1.cpp
+$ ./a.out
+# first input is number of nodes in T1
+10
+# second input is node information; node key value, left child index, right child index in T1
+5 -1 -1
+10 0 2
+15 -1 -1
+20 1 4
+25 -1 -1
+50 3 6
+60 -1 8
+65 -1 -1
+70 7 9
+80 -1 -1
+# third input is number of nodes in T2
+5
+# fourth input is node key value, left child index, right child index in T2
+5 -1 -1
+10 0 2
+15 -1 -1
+20 1 4
+25 -1 -1
+# result; Subtree or Not Subtree
+Subtree
+```
+
+is_subtree2.cpp is improved one.
+It takes O(log N + log M) as performance cost.
+
+```bash
+$ g++ is_subtree2.cpp
+$ ./a.out
+# first input is number of nodes in T1
+10
+# second input is node information; node key value, left child index, right child index in T1
+5 -1 -1
+10 0 2
+15 -1 -1
+20 1 4
+25 -1 -1
+50 3 6
+60 -1 8
+65 -1 -1
+70 7 9
+80 -1 -1
+# third input is number of nodes in T2
+5
+# fourth input is node key value, left child index, right child index in T2
+5 -1 -1
+10 0 2
+15 -1 -1
+20 1 4
+25 -1 -1
+# result; Subtree or Not Subtree
+Subtree
+```
