@@ -1,4 +1,4 @@
-# Recursive Processing
+# Recursion
 
 ## Exhaustive Search
 

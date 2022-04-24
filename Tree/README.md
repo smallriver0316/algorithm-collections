@@ -485,6 +485,7 @@ Subtree
 ```
 
 is_subtree2.cpp is improved one.
+It matches trees with recursion.
 It takes O(log N + log M) as performance cost.
 
 ```bash

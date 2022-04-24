@@ -30,10 +30,12 @@ bool matchTree(Node *T1, Node *T2, int index1, int index2)
 
   if (index1 == NIL && index2 != NIL)
   {
+    // Reaching NIL node in T1 before T2 means mismatch
     return false;
   }
   else if (index2 == NIL)
   {
+    // Reaching NIL node in T2 means finishing without mismatch
     return true;
   }
   else if (T1[index1].key == T2[index2].key)
