@@ -515,3 +515,91 @@ $ ./a.out
 # result; Subtree or Not Subtree
 Subtree
 ```
+
+## Random Node
+
+This is implementation of Binary Tree class with folliwing functions.
+
+- insert node
+- delete node
+- search node
+- get random node
+
+If command and node key are provided, it will invoke these functions.
+
+random_node1.cpp creates indices of nodes by inorder walk and selects one randomly.
+
+```bash
+$ g++ random_node1.cpp
+$ ./a.out
+# first input is number of command
+10
+# second inputs are pair of command and node key
+insert 4
+insert 1
+insert 3
+insert 9
+delete 3
+insert 7
+search 3
+No such node
+search 9
+Node: 9, parent: 4, left child: 7, right child: null
+random
+Node: 1, parent: 4, left child: null, right child: null
+random
+Node: 9, parent: 4, left child: 7, right child: null
+```
+
+In regard to getting random node, random_node2.cpp is more efficient.
+
+In this case, each node of tree has number of nodes, which means the size of sub-tree as the node is assumed as the root.
+Handling this size as index makes possible to select a node randomly.
+But it is difficult to delete a node, because deletion causes change of the size for multiple nodes.
+So random_node2.cpp doesn't have a delete node function.
+
+```bash
+$ g++ random_node2.cpp
+$ ./a.out
+10
+insert 9
+insert 3
+insert 1
+insert 8
+search 1
+Node: 1, left child: null, right child: null
+search 2
+No such node
+insert 7
+random
+Node: 3, left child: 1, right child: 8
+random
+Node: 9, left child: 3, right child: null
+random
+Node: 7, left child: null, right child: null
+```
+
+random_node3.cpp is more efficient than random_node2.cpp.
+This makes random number only one time when get random node.
+
+```bash
+$ g++ random_node3.cpp
+$ ./a.out
+10
+insert 9
+insert 2
+insert 4
+insert 8
+search 4
+Node: 4, left child: null, right child: 8
+random
+Node: 9, left child: 2, right child: null
+random
+Node: 2, left child: null, right child: 4
+random
+Node: 2, left child: null, right child: 4
+random
+Node: 2, left child: null, right child: 4
+random
+Node: 4, left child: null, right child: 8
+```
