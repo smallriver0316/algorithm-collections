@@ -122,7 +122,7 @@ Postorder
 ### Search in Tree
 
 When searching a node in tree, it would be useful to use recurcive processing.
-Other than binary search tree(BST), it is difficult to figure out where a target node is in left or right siblings or children of them. So it is required to do the recursive processing against each partial tree agaist left or right siblings. This enables the search with short codes and high performance.
+Other than binary search tree(BST), it is difficult to figure out where a target node is in left or right siblings or children of them. So it is required to do the recursion against each partial tree agaist left or right siblings. This enables the search with short codes and high performance.
 
 ## Reconstruction of Tree
 
@@ -209,7 +209,7 @@ $ ./a.out
 Unbalanced Tree
 ```
 
-This algorithm calculates the height of tree with recursive processing.
+This algorithm calculates the height of tree with recursion.
 It takes performance cost of O(N) and spatial cost of O(H).
 N is number of nodes, H is height of tree.
 
@@ -602,4 +602,35 @@ random
 Node: 2, left child: null, right child: 4
 random
 Node: 4, left child: null, right child: 8
+```
+
+The performance cost of this algorithm is O(log N).
+If the tree is balanced binary tree and represents the depth as D,
+it can be said that it takes O(D) as performance cost.
+
+## Count Paths with Target Sum
+
+This is implementation of searching paths in a given tree in which the sum of nodes is equal to target value.
+
+```bash
+$ g++ count_paths_with_sum1.cpp
+$ ./a.out
+# first input is number of nodes
+9
+# second inputs are node information; key, left child index, right child index
+3 -1 -1
+3 0 2
+-2 -1 -1
+5 1 4
+2 -1 5
+1 -1 -1
+10 3 7
+-3 -1 8
+11 -1 -1
+# third input is target sum
+8
+# result; paths in which sum of nodes is equal to target value
+5 3
+5 2 1
+-3 11
 ```

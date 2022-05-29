@@ -2,7 +2,7 @@
 
 ## Exhaustive Search
 
-It solves the same problem as the one implemented in Recursive Processing.
+It solves the same problem as the one implemented in Recursion.
 
 When an array is geven, it determins if it is possible to create target numbers from sum of several elements in the array.
 

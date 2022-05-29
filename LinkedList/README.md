@@ -165,7 +165,7 @@ It distinguishes whether a given single oriented linked list represents palindro
 
 There are several ways to solve this problem.
 For example, creating stack or making inversed linked list of original one.
-But here is implemented with recursive processing.
+But here is implemented with recursion.
 
 This program assumes that the given linked list is composed of integer.
 
