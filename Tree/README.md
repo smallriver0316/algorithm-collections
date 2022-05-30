@@ -610,10 +610,51 @@ it can be said that it takes O(D) as performance cost.
 
 ## Count Paths with Target Sum
 
-This is implementation of searching paths in a given tree in which the sum of nodes is equal to target value.
+This is implementation of searching paths in a given binary tree in which the sum of nodes is equal to target value.
+The path doesn't have to start from the root and to end in the leaves.
+But it must be directed from lower to deeper in the tree depth.
+
+count_paths_with_sum1.cpp uses brute force method.
+The performance cost becomes O(NlogN), because the number of searching nodes will be N(number of all nodes) x D(depth of each node).
+The depth of each node isn't larger than log(N).
 
 ```bash
 $ g++ count_paths_with_sum1.cpp
+$ ./a.out
+# first input is number of nodes
+9
+# second inputs are node information; key, left child index, right child index
+3 -1 -1
+3 0 2
+-2 -1 -1
+5 1 4
+2 -1 5
+1 -1 -1
+10 3 7
+-3 -1 8
+11 -1 -1
+# third input is target sum
+8
+# result; paths in which sum of nodes is equal to target value
+5 3
+5 2 1
+-3 11
+```
+
+count_paths_with_sum2.cpp is more efficient.
+It assumes the path as an array,
+and also records sum of nodes from the begining to each node in the array.
+It calculates following difference value.
+
+Diff = (current sum) - (target sum)
+
+If Diff exists in record of sum of nodes, the required path is from the next node to current node.
+This algorithm takes O(N) as performance cost, because it just searches all nodes.
+And it also takes O(logN) as memory cost, because it is necessary to record nodes of tree depth.
+Tree depth isn't larger than log(N)
+
+```bash
+$ g++ count_paths_with_sum2.cpp
 $ ./a.out
 # first input is number of nodes
 9

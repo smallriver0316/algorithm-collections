@@ -14,6 +14,7 @@ struct Node
 
 Node T[N];
 
+// SumIndex deals with unordered map in which key is sum of nodes and value is index in path in tree.
 class SumIndex
 {
   unordered_map<int, vector<int>> sums;
