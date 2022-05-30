@@ -14,6 +14,49 @@ struct Node
 
 Node T[N];
 
+class SumIndex
+{
+  unordered_map<int, vector<int>> sums;
+
+public:
+  vector<int> get(int key)
+  {
+    if (sums.find(key) != sums.end())
+    {
+      return sums[key];
+    }
+    else
+    {
+      return {};
+    }
+  }
+
+  void add(int key, int value)
+  {
+    if (sums.find(key) == sums.end())
+    {
+      sums[key] = {value};
+    }
+    else
+    {
+      sums[key].push_back(value);
+    }
+  }
+
+  void remove(int key)
+  {
+    unordered_map<int, vector<int>>::iterator it = sums.find(key);
+    if (it != sums.end())
+    {
+      sums[key].pop_back();
+      if (sums[key].size() == 0)
+      {
+        sums.erase(it);
+      }
+    }
+  }
+};
+
 int findRoot(int n)
 {
   for (int i = 0; i < n; i++)
@@ -35,13 +78,13 @@ void printPath(vector<Node> nodes, int startIndex, int endIndex)
   cout << endl;
 }
 
-void countPathWithSum(int index, int target, vector<Node> nodes, vector<int> sums)
+void countPathWithSum(int index, int cur, int target, vector<Node> nodes, SumIndex sumIndex)
 {
   if (index != NIL)
   {
-    int cur = sums.empty() ? T[index].key : sums.back() + T[index].key;
+    cur += T[index].key;
     nodes.push_back(T[index]);
-    sums.push_back(cur);
+    sumIndex.add(cur, nodes.size() - 1);
 
     if (cur == target)
     {
@@ -50,18 +93,17 @@ void countPathWithSum(int index, int target, vector<Node> nodes, vector<int> sum
     else
     {
       int diff = cur - target;
-      for (int i = 0; i < sums.size(); i++)
+      vector<int> indices = sumIndex.get(diff);
+      for (int i = 0; i < indices.size(); i++)
       {
-        if (sums[i] == diff)
-        {
-          printPath(nodes, i + 1, nodes.size() - 1);
-        }
+        printPath(nodes, indices[i] + 1, nodes.size() - 1);
       }
     }
 
-    countPathWithSum(T[index].l, target, nodes, sums);
-    countPathWithSum(T[index].r, target, nodes, sums);
+    countPathWithSum(T[index].l, cur, target, nodes, sumIndex);
+    countPathWithSum(T[index].r, cur, target, nodes, sumIndex);
     nodes.pop_back();
+    sumIndex.remove(cur);
   }
 }
 
@@ -69,9 +111,9 @@ void countPathWithSumFromRoot(int sum, int n)
 {
   int root = findRoot(n);
   vector<Node> nodes;
-  vector<int> sums;
+  SumIndex sumIndex;
 
-  countPathWithSum(root, sum, nodes, sums);
+  countPathWithSum(root, 0, sum, nodes, sumIndex);
 }
 
 int main()
