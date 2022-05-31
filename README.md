@@ -1,4 +1,4 @@
-# algorithm-study
+# Algorithm Collections
 
 Collection of programs to study algorithm
 

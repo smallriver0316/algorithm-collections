@@ -3,7 +3,7 @@
 using namespace std;
 
 #define N 100
-#define NOT_VISITED 0
+#define UNVISITED 0
 #define VISITING 1
 #define VISITED 2
 
@@ -20,7 +20,7 @@ int nextVertex(int uidx, int vidx)
 {
     for (int i = vidx + 1; i < n; i++)
     {
-        if (M[uidx][i] && V[i] == NOT_VISITED)
+        if (M[uidx][i] && V[i] == UNVISITED)
             return i;
     }
     return -1;
@@ -59,11 +59,11 @@ void dfs()
     // initialization
     int timestamp = 0;
     for (int i = 0; i < n; i++)
-        V[i] = NOT_VISITED;
+        V[i] = UNVISITED;
     // calculation
     for (int i = 0; i < n; i++)
     {
-        if (V[i] == NOT_VISITED)
+        if (V[i] == UNVISITED)
             timestamp = dfsVisit(i, timestamp);
     }
     // output
@@ -76,6 +76,7 @@ int main()
     int u, k, v;
 
     cin >> n;
+
     // initialization
     for (int i = 0; i < n; i++)
     {
@@ -83,6 +84,7 @@ int main()
             M[i][j] = 0;
     }
 
+    // input
     for (int i = 0; i < n; i++)
     {
         cin >> u >> k;
