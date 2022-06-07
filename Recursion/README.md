@@ -58,3 +58,20 @@ $ ./a.out
 88.88888889 0.00000000
 100.00000000 0.00000000
 ```
+
+## Triple Steps
+
+It assumes that a person can step up stairs by one, two, or three at once.
+
+Under this condition, this algorithm calculates how many patterns there are in stepping up stairs.
+
+The number of steps in the stairs will be given as input.
+
+```bash
+$ g++ triple_steps.cpp
+$ ./a.out
+# first input is the number of steps in stairs
+10
+# result
+274
+```
