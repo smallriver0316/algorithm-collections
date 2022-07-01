@@ -78,13 +78,15 @@ $ ./a.out
 
 ## Triple Steps
 
-This is a improved program of one in Recursion section.
+This is a improved program of one in Recursion section with memoization.
 
 It assumes that a person can step up stairs by one, two, or three at once.
 
 Under this condition, this algorithm calculates how many patterns there are in stepping up stairs.
 
 The number of steps in the stairs will be given as input.
+
+Because of memoization, the memory cost is only O(3) and performance cost is O(N).
 
 ```bash
 $ g++ triple_steps.cpp
@@ -93,4 +95,22 @@ $ ./a.out
 10
 # result
 274
+```
+
+## Grid Walk
+
+This program is proto-type of one in Recursion section.
+
+```bash
+$ g++ grid_walking.cpp
+$ ./a.out
+# fist input is the number of rows and columns
+3 3
+# second input is the number of unavailable cells
+2
+# third input is coordinates of unavailable cells
+1 0
+1 2
+# result
+→ ↓ ↓ →
 ```

@@ -67,6 +67,8 @@ Under this condition, this algorithm calculates how many patterns there are in s
 
 The number of steps in the stairs will be given as input.
 
+It will take O(3^N) as performance cost. So it will be improved by using memoization.
+
 ```bash
 $ g++ triple_steps.cpp
 $ ./a.out
@@ -75,3 +77,28 @@ $ ./a.out
 # result
 274
 ```
+
+## Grid Walk
+
+It assumes that a robot moves from the left-upper cell to the right-bottom one in r x c grid.
+
+The robot can move only to right and down direction and several cells are not available.
+
+Under these conditions, this program calculates the pass for the robot to reach the goal.
+
+```bash
+$ g++ grid_walking.cpp
+$ ./a.out
+# fist input is the number of rows and columns
+3 3
+# second input is the number of unavailable cells
+2
+# third input is coordinates of unavailable cells
+1 0
+1 2
+# result
+→ ↓ ↓ →
+```
+
+This algorithm save the cell which is stopped by once.
+By this method, it takes O(rc) as performance cost.
