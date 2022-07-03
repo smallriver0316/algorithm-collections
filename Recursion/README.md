@@ -120,3 +120,19 @@ $ ./a.out
 # result
 4
 ```
+
+magic_index1.cpp assumes that there is only one magic index in the array.
+But magic_index2.cpp can find all of them even if sevral magic indexes exist.
+
+magic_index2.cpp allows that a given array has same values as its items.
+
+```bash
+$ g++ magic_index2.cpp
+$ ./a.out
+# first input is size of array
+7
+# second input is array
+-1 0 1 2 4 4 6
+# result
+4 6
+```
