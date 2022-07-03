@@ -102,3 +102,21 @@ $ ./a.out
 
 This algorithm save the cell which is stopped by once.
 By this method, it takes O(rc) as performance cost.
+
+## Magic Index
+
+When there are array in which the all items are numbers, different from each other and sorted in ascending order,
+here defines an index of Array\[i\] == i as magic index.
+
+This program searches a magic number from a given array.
+
+```bash
+$ g++ magic_index1.cpp
+$ ./a.out
+# first input is size of array
+7
+# second input is array
+-1 0 1 2 4 7 8
+# result
+4
+```
