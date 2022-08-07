@@ -136,3 +136,64 @@ $ ./a.out
 # result
 4 6
 ```
+
+## Power Set
+
+This program outputs all subsets of given set.
+
+This can be calulated by recursion.
+When subsets of n set is represented by P(n), subsets of (n + 1) set will be following.
+
+```text
+P(n + 1) = P(n) + P(n)'s subsets including a(n + 1)
+```
+
+a(n + 1) represents (n + 1)-th element of the set.
+
+This relation is implemented into power_set1.cpp.
+
+```bash
+$ g++ power_set1.cpp
+$ ./a.out
+# first input is size of a given set
+3
+# second input is the given set.
+1 2 3
+# result
+{ }
+{ 3, }
+{ 2, }
+{ 3, 2, }
+{ 1, }
+{ 3, 1, }
+{ 2, 1, }
+{ 3, 2, 1, }
+```
+
+The number of patterns of subsets is 2^N.
+Each subset has N elements at least.
+So this algorithm takes O(N*2^N) as performance const.
+
+Again, The patterns of combination is 2^N.
+Each item has two patterns, included or not, when making subsets.
+So this is calculated with bit operation.
+
+power_set2.cpp doesn't use recursion but bit opearation.
+
+```bash
+$ g++ power_set2.cpp
+$ ./a.out
+# first input is size of a given set
+3
+# second input is the given set.
+1 2 3
+# result
+{ }
+{ 1, }
+{ 2, }
+{ 1, 2, }
+{ 3, }
+{ 1, 3, }
+{ 2, 3, }
+{ 1, 2, 3, }
+```
