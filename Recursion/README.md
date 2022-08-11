@@ -197,3 +197,51 @@ $ ./a.out
 { 2, 3, }
 { 1, 2, 3, }
 ```
+
+## Recursive Multiplication
+
+This program calculates product, result of multiplication without multiplication.
+Addition, Subtraction, and bit operation are allowed to be used.
+
+The times of calculation is wanted to be least.
+
+recursive_multiplication1.cpp tries to solve it by bit operation and addition.
+This assumes that all integers are composed of sum of 2^x.
+
+```bash
+$ g++ recursive_multiplication1.cpp
+$ ./a.out
+# first inputs are operands
+3 7
+# result
+result: 21
+```
+
+recursive_multiplication2.cpp tries another aproach.
+
+This assumes there are (a * b) boxes, arranged like grid.
+"a" and "b" are operands of multiplication.
+
+These boxes can be counted by double of the half number of boxes.
+And the half number can be counted by double of half of the half.
+So this can be calculated by recursion.
+
+This uses bit operation, addition, subtraction, and modulo operation.
+
+```bash
+$ g++ recursive_multiplication2.cpp
+$ ./a.out
+# first inputs are operands
+5 8
+# result
+result: 40
+```
+
+This aproach can be improved by dynamic programming.
+The improved version is implemented in DynamicProgramming directory.
+
+recursive_multiplication3.cpp is improved version from it.
+It may be a little bit faster than recursive_multiplication2.cpp when used odd number.
+
+These algorithm takes O(log s) as performance cost.
+s is smaller number of two operands.

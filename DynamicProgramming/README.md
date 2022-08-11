@@ -114,3 +114,21 @@ $ ./a.out
 # result
 → ↓ ↓ →
 ```
+
+## Recursive Multiplication
+
+This is the same problem as one in Recursion directory.
+
+This program calculates product, result of multiplication without multiplication.
+Addition, Subtraction, and bit operation are allowed to use.
+
+It is the version using dynamic programming, inproved from recursive_multiplication2.cpp in Recursion directory.
+
+```bash
+$ g++ recursive_multiplication.cpp
+$ ./a.out
+# first inputs are operands
+17 23
+# result
+result: 391
+```
