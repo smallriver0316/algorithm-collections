@@ -245,3 +245,27 @@ It may be a little bit faster than recursive_multiplication2.cpp when used odd n
 
 These algorithm takes O(log s) as performance cost.
 s is smaller number of two operands.
+
+## Tower of Hanoi
+
+This program solves the problem called tower of hanoi.
+
+The rule of tower of hanoi is like below.
+
+- There are three towers.
+- At first, several disks are piled on the one of the towers.
+- All disks have different sizes and any disk must be piled on larger one than itself.
+- Only a disk can be moved to another tower at onece.
+
+Under this condition, trying to move all disks to the last tower.
+
+```bash
+$ g++ tower_of_honoi.cpp
+$ ./a.out
+# input is the number of disks
+10
+# result
+# this program handles disks as number from 0 to (n - 1)
+# result shows disks on the last tower from top to bottom.
+0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+```
