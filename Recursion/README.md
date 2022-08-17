@@ -269,3 +269,41 @@ $ ./a.out
 # result shows disks on the last tower from top to bottom.
 0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
 ```
+
+## Unique Characters' Permutation
+
+This program outputs permutations of a given string, which is composed of unique characters.
+
+unique_permutation2.cpp runs in the same way as unique_permutation1.cpp.
+
+```bash
+$ g++ unique_permutation1.cpp
+$ ./a.out
+# input string
+hoge
+# result
+hoge
+hoeg
+hgoe
+hgeo
+heog
+hego
+ohge
+oheg
+oghe
+ogeh
+oehg
+oegh
+ghoe
+gheo
+gohe
+goeh
+geho
+geoh
+ehog
+ehgo
+eohg
+eogh
+egho
+egoh
+```
