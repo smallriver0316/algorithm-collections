@@ -275,6 +275,7 @@ $ ./a.out
 This program outputs permutations of a given string, which is composed of unique characters.
 
 unique_permutation2.cpp runs in the same way as unique_permutation1.cpp.
+They takes O(n!) as performance cost.
 
 ```bash
 $ g++ unique_permutation1.cpp
@@ -306,4 +307,20 @@ eohg
 eogh
 egho
 egoh
+```
+
+## Duplicated Characters' Permutations
+
+This program outputs permutations of a given string, which is composed of posible duplicated characters.
+
+This program is improved one of unique_permutations1.cpp.
+It takes a measure not to take O(n!) as performance cost.
+
+```bash
+g++ duplicated_permutations.cpp
+./a.out
+aab
+baa
+aba
+aab
 ```
