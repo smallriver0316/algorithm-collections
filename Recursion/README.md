@@ -317,10 +317,52 @@ This program is improved one of unique_permutations1.cpp.
 It takes a measure not to take O(n!) as performance cost.
 
 ```bash
-g++ duplicated_permutations.cpp
-./a.out
+$ g++ duplicated_permutations.cpp
+$ ./a.out
+# input string
 aab
+# result
 baa
 aba
 aab
 ```
+
+## Brackets
+
+This program outputs all patterns of bracket arrangements.
+
+```bash
+$ g++ brackets1.cpp
+$ ./a.out
+# input is number of bracket pairs
+3
+# result
+()()()
+()(())
+(())()
+(()())
+((()))
+```
+
+brackets2.cpp uses the same algorithm as brackets1.cpp but handles bit array to represent brackets arragements.
+
+brackets3.cpp is implemented based on recursion concept.
+That is fn(n) = "patters of n * () and fn(n + 1) = fn(n) + ???".
+
+(n + 1) brackets patters is made by inserting one bracket into n brackets patterns.
+
+```bash
+$ g++ brackets3.cpp
+$ ./a.out
+# input is number of bracket pairs
+3
+# result
+((()))
+(()())
+(())()
+()(())
+()()()
+```
+
+But the algorithm of brackets3.cpp is less effective than brackets1 and brackets2.
+This can create same patterns in process of recursion.
