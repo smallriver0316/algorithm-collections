@@ -366,3 +366,40 @@ $ ./a.out
 
 But the algorithm of brackets3.cpp is less effective than brackets1 and brackets2.
 This can create same patterns in process of recursion.
+
+## Coins
+
+There are 4 types of coins, 1 cent, 5 cent, 10 cent and 25 cent.
+
+Here, number of each of them is outside of thinking, so much enough are there.
+
+This program outputs number of cases to make a given price with these coins.
+
+For example, given 10 as the price, there are 4 cases as below.
+
+- 1 cent * 10
+- 5 cent + 1 cent * 5
+- 5 cent * 2
+- 10 cent
+
+```bash
+$ g++ coins1.cpp
+$ ./a.out
+# input is price
+26
+# result
+13
+```
+
+coins1.cpp decides largest coins which can be included and adds one coin step by step.
+
+coins2.cpp decides the number of largest coins which can be included and number of others as well.
+
+```bash
+$ g++ coins2.cpp
+$ ./a.out
+# input is price
+100
+# result
+242
+```

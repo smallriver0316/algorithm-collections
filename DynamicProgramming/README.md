@@ -132,3 +132,22 @@ $ ./a.out
 # result
 result: 391
 ```
+
+## Coins
+
+This is an improved program of Recursion/coins2.cpp.
+
+There are 4 types of coins, 1 cent, 5 cent, 10 cent and 25 cent.
+
+Here, number of each of them is outside of thinking, so much enough are there.
+
+This program outputs number of cases to make a given price with these coins.
+
+```bash
+$ g++ coins.cpp
+$ ./a.out
+# input is price
+26
+# result
+13
+```
