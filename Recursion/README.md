@@ -403,3 +403,57 @@ $ ./a.out
 # result
 242
 ```
+
+## 8 Queens
+
+It assumes that there are 8 x 8 gird board and 8 pieces of queen.
+
+This program solve a problem to arrange thense queens on this board under following conditions.
+
+- Each queen must not be put on the same horizontal line.
+- Each queen must not be put on the same vertical line.
+- Each queen must not be put on the same diagonal line.
+
+Here, diagonal doesn't mean the diaglnal of the board, but skew line from each queen.
+
+This algorithm calculates all patterns of the arrangements.
+
+```bash
+$ g++ eight_queens.cpp
+$ ./a.out
+# result
+# arrangements of 8 Queens
+>>>
+[x][ ][ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][x][ ]
+[ ][ ][ ][ ][x][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][x]
+[ ][x][ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][x][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][x][ ][ ]
+[ ][ ][x][ ][ ][ ][ ][ ]
+<<<
+>>>
+[x][ ][ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][x][ ]
+[ ][ ][ ][x][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][x][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][x]
+[ ][x][ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][x][ ][ ][ ]
+[ ][ ][x][ ][ ][ ][ ][ ]
+<<<
+>>>
+[x][ ][ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][x][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][x]
+[ ][ ][x][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][x][ ]
+[ ][ ][ ][x][ ][ ][ ][ ]
+[ ][x][ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][x][ ][ ][ ]
+<<<
+...
+# number of patterns
+92
+```
