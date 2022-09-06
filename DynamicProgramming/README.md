@@ -151,3 +151,29 @@ $ ./a.out
 # result
 13
 ```
+
+## Pile Boxes
+
+This program solves a problem to pile boxes under following conditions.
+
+- Box has paramers of width, height, depth.
+- All boxes cannot be rotated.
+- A box can be put on a box whose width, height, and depth are all larger than itself.
+
+Under this condition, this program calculates the maximum height of piled boxes.
+
+This can be solved by recursion, but its performance is same as non-recursion method.
+It will be O(n2), n is the number of boxes.
+
+So dynamic programming is required to make faster to solve it.
+
+```bash
+$ g++ pile_boxes.cpp
+$ ./a.out
+4
+4 8 9
+1 2 3
+2 4 7
+1 9 6
+14
+```
