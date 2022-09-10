@@ -177,3 +177,31 @@ $ ./a.out
 1 9 6
 14
 ```
+
+## Boolean Expression
+
+This program solves how many patterns there are to insert brackets into string of boolean expression.
+
+The boolean expression is composed of 1(true), 0(false), &(AND), |(OR) and ^(XOR).
+
+Also the answer of it, (or true/false), is given with the string.
+
+For example, "1^0|0|1" and false.
+
+- (1)^((0|0)|1) -> false
+- (1)^(0|(0|1)) -> false
+- (1^0)|(0|1) -> true
+- (1^0|0)|(1) -> true
+
+In this case, the number of patterns is 2.
+
+```bash
+$ g++ boolean_expression.cpp
+$ ./a.out
+# first input is string of boolean expression
+0&0&0&1^1|0
+# second input is answer of boolean expression
+true
+# result
+patterns: 10
+```
