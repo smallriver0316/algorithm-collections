@@ -288,3 +288,26 @@ $ ./a.out
 # result: minimum cost of sorting
 24
 ```
+
+## Merge Sorted Arrays
+
+This program merge two arrays which have already been sorted.
+
+The first array is assumed that it has enough space to add the second array to the end.
+
+This is application of merge sort's process.
+
+```bash
+$ merge_sorted_array.cpp
+$ ./a.out
+# initial input is number of items in first array
+5
+# second input is the first array
+3 4 8 10 13
+# third input is number of items in second array
+3
+# fourth input is the second array
+6 11 25
+# result
+3, 4, 6, 8, 10, 11, 13, 25,
+```

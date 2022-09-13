@@ -195,6 +195,15 @@ For example, "1^0|0|1" and false.
 
 In this case, the number of patterns is 2.
 
+It may be better to assume that each operand is parenthesized.
+Above example omits this.
+So here, the patterns to insert brackets means how to insert brackets which parenthesize more than two operands.
+
+Like this.
+
+- (1)^(((0)|(0))|(1))
+- (1)^((0)|((0)|(1)))
+
 ```bash
 $ g++ boolean_expression.cpp
 $ ./a.out
