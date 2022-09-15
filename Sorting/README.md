@@ -311,3 +311,18 @@ $ ./a.out
 # result
 3, 4, 6, 8, 10, 11, 13, 25,
 ```
+
+## Grouping Anagrams
+
+Given array of strings, this program make strings of anagram arranged next to each other.
+
+```bash
+$ g++ group_anagrams.cpp
+$ ./a.out
+# first input is number of strings
+5
+# second input is strings
+race hoge fflls care acre
+# result
+fflls, hoge, race, care, acre,
+```
