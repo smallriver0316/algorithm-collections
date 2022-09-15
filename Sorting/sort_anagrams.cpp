@@ -25,10 +25,7 @@ vector<string> groupAnagrams(vector<string> array)
   vector<string> ret;
   for (unordered_map<string, vector<string>>::iterator it = map.begin(); it != map.end(); it++)
   {
-    for (vector<string>::iterator jt = it->second.begin(); jt != it->second.end(); jt++)
-    {
-      ret.push_back(*jt);
-    }
+    ret.insert(ret.end(), it->second.begin(), it->second.end());
   }
   return ret;
 }
