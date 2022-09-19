@@ -316,6 +316,10 @@ $ ./a.out
 
 Given array of strings, this program make strings of anagram arranged next to each other.
 
+Here, given array includes strings of anagram, such as "acre", "crea", "care".
+
+So in the result of this process, these three words must be arranged to next of each other.
+
 ```bash
 $ g++ group_anagrams.cpp
 $ ./a.out
