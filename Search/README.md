@@ -29,4 +29,19 @@ It does not define how to rotate an array.
 If rotations are done at random position,
 the array will be also arranged randomly and the assumption, the array is originally sorted, will be nothing to work.
 
-The performance cost of this algorithm will be O(logN) at the best, O(N) at the worst.
+The performance cost of this algorithm will be O(logN) at the best, because of binary search, but O(N) at the worst.
+
+## Search in Array of Unknown Size
+
+This problem assumes an array whose function called elementAt(i) can output an item of specified index and whose size is unknown.
+
+In this situation, this program find index of specified target value.
+
+```bash
+$ g++ search_unknown_size_array.cpp
+$ ./a.out
+10
+3 7 9 13 16 18 20 24 29 35
+20
+6
+```
