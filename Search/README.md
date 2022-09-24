@@ -35,13 +35,50 @@ The performance cost of this algorithm will be O(logN) at the best, because of b
 
 This problem assumes an array whose function called elementAt(i) can output an item of specified index and whose size is unknown.
 
+If the specified index is larger than array size, elementAt(i) gives -1.
+
+The array is also assumed to be sorted.
+So all items in the array must be numbers greater than 0.
+
 In this situation, this program find index of specified target value.
 
 ```bash
 $ g++ search_unknown_size_array.cpp
 $ ./a.out
+# first input is number of items in the array
 10
+# second input is items in the array
 3 7 9 13 16 18 20 24 29 35
+# third input is target item
 20
+# result
 6
+```
+
+## Search in Chinky Array
+
+This program finds index of specified target in a given array.
+
+This array is assumed to be sorted, but it has several chinks of null characters.
+
+For example,
+
+{"at", "", "", "", "ball", "", "", "car", "", "", "dad"}
+
+```bash
+$ g++ search_chinky_array.cpp
+$ ./a.out
+# first input is number of words in array
+4
+# second input is set of word and number of null characters followed the word
+at 3
+ball 2
+car 2
+dad 2
+# array resulted from the above input
+"at", "", "", "", "ball", "", "", "car", "", "", "dad", "", "",
+# fourth input is target word
+ball
+# result
+Target index is 4 th index.
 ```
