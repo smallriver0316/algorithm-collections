@@ -82,3 +82,45 @@ ball
 # result
 Target index is 4 th index.
 ```
+
+## Search Redundant Numbers
+
+This algorithm finds redundant numbers from an array.
+
+The array has numbers of 1 ~ N as its elements.
+N is 3200 at largest.
+The array has redundant numbers and its size is unknown.
+
+Furthermore, there is a limitation that this algorithm can use memory of 4KB or less.
+
+This program make an array of specified size, and composed of random numbers of 1 ~ 3200.
+And it outputs redundant numbers in it.
+
+```bash
+$ g++ search_redundant_numbers.cpp
+$ ./a.out
+# input is size of array
+3210
+# result
+17713
+30544
+21333
+31651
+27219
+5250
+6068
+31825
+8232
+25533
+22662
+20880
+11529
+10482
+14245
+648
+18548
+17429
+4693
+21379
+...
+```
