@@ -124,3 +124,25 @@ $ ./a.out
 21379
 ...
 ```
+
+## Search in Sorted Matrix
+
+This program search an item in a sorted matrix.
+
+Here, the sorted matrix is assumed that items in the every row and column are sorted in ascending order.
+
+```bash
+$ g++ search_sorted_matrix1.cpp
+$ ./a.out
+# first inputs are numbers of row and column of matrix
+4 4
+# second inputs are items in matrix
+15 20 40 85
+20 35 80 95
+30 55 95 105
+40 80 100 120
+# third input is target item
+55
+# result
+2 row, 1 columns
+```
