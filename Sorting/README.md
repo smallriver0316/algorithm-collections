@@ -330,3 +330,36 @@ race hoge fflls care acre
 # result
 fflls, hoge, race, care, acre,
 ```
+
+## Rank Integer Sequence
+
+This program rank numbers over reading a integer sequence.
+
+Here, rank of integer X means how many times numbers that is less than X appeared.
+
+So in this probrem, it is necessary to implement two functions,
+one is track(), which is called to read a number,
+and another is getRankOfNumber(), which is called to output rank of a given number.
+
+```bash
+$ g++ rank_integers1.cpp
+$ ./a.out
+# first input is length of integer sequence
+9
+# second input is integer sequence
+5 1 4 4 5 9 7 13 3
+# third input is number of getRankOfNumber() called
+3
+# fourth input is argument of getRankOfNumber()
+1
+# result of getRankOfNumber()
+0
+# argument of getRankOfNumber()
+3
+# result
+1
+# argument of getRankOfNumber()
+4
+# result
+2
+```
