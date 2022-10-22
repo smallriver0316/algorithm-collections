@@ -96,9 +96,14 @@ public:
   int getRankOfNumber(int x)
   {
     Node *runner = root;
-    while (runner != nullptr && runner->key > x)
+    while (runner != nullptr && runner->key != x)
     {
       runner = runner->left;
+    }
+
+    if (runner == nullptr)
+    {
+      return -1;
     }
 
     return getSumOfCount(runner, x);

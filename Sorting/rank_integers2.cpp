@@ -65,6 +65,9 @@ public:
     }
     else
     {
+      // if x > data
+      // right side may include less number than x
+      // add 1 as count of this node
       return leftSize + (right == nullptr ? 0 : right->getRank(x)) + 1;
     }
   }
@@ -88,7 +91,7 @@ int getRankOfNumber(int x, RankNode *node)
 {
   if (node == nullptr)
   {
-    return 0;
+    return -1;
   }
   else
   {
@@ -105,14 +108,7 @@ int main()
   for (int i = 0; i < n; i++)
   {
     cin >> x;
-    if (root == nullptr)
-    {
-      root = track(x, root);
-    }
-    else
-    {
-      track(x, root);
-    }
+    root = track(x, root);
   }
 
   int m, ret;

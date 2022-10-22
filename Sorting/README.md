@@ -363,3 +363,29 @@ $ ./a.out
 # result
 2
 ```
+
+rank_integers2.cpp is more sophisticated algorithm,
+it takes O(N) as performance cost, but it is a little complicated.
+
+## Mountain and Valley
+
+Given an array of integers, an element that larger than or equal to neighbors is mountain,
+and an element that smaller than or equal to neighbors is valley here.
+
+This program rearranges an given array as that mountain and valley stand alternately.
+
+```bash
+$ g++ mountain_and_valley1.cpp
+$ ./a.out
+# first input is length of array
+8
+# second input is array
+5 3 1 2 3 9 4 1
+# result
+9 1 5 1 4 2 3 3
+```
+
+mountain_and_valley1.cpp and mountain_and_valley2.cpp uses sort algorithm at first,
+so the performance cost depends on it, O(NlogN).
+
+mountain_and_valley3.cpp is more sophisticated, so it takes O(N) as performance cost.
