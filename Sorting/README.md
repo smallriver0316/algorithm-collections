@@ -288,3 +288,104 @@ $ ./a.out
 # result: minimum cost of sorting
 24
 ```
+
+## Merge Sorted Arrays
+
+This program merge two arrays which have already been sorted.
+
+The first array is assumed that it has enough space to add the second array to the end.
+
+This is application of merge sort's process.
+
+```bash
+$ merge_sorted_array.cpp
+$ ./a.out
+# initial input is number of items in first array
+5
+# second input is the first array
+3 4 8 10 13
+# third input is number of items in second array
+3
+# fourth input is the second array
+6 11 25
+# result
+3, 4, 6, 8, 10, 11, 13, 25,
+```
+
+## Grouping Anagrams
+
+Given array of strings, this program make strings of anagram arranged next to each other.
+
+Here, given array includes strings of anagram, such as "acre", "crea", "care".
+
+So in the result of this process, these three words must be arranged to next of each other.
+
+```bash
+$ g++ group_anagrams.cpp
+$ ./a.out
+# first input is number of strings
+5
+# second input is strings
+race hoge fflls care acre
+# result
+fflls, hoge, race, care, acre,
+```
+
+## Rank Integer Sequence
+
+This program rank numbers over reading a integer sequence.
+
+Here, rank of integer X means how many times numbers that is less than X appeared.
+
+So in this probrem, it is necessary to implement two functions,
+one is track(), which is called to read a number,
+and another is getRankOfNumber(), which is called to output rank of a given number.
+
+```bash
+$ g++ rank_integers1.cpp
+$ ./a.out
+# first input is length of integer sequence
+9
+# second input is integer sequence
+5 1 4 4 5 9 7 13 3
+# third input is number of getRankOfNumber() called
+3
+# fourth input is argument of getRankOfNumber()
+1
+# result of getRankOfNumber()
+0
+# argument of getRankOfNumber()
+3
+# result
+1
+# argument of getRankOfNumber()
+4
+# result
+2
+```
+
+rank_integers2.cpp is more sophisticated algorithm,
+it takes O(N) as performance cost, but it is a little complicated.
+
+## Mountain and Valley
+
+Given an array of integers, an element that larger than or equal to neighbors is mountain,
+and an element that smaller than or equal to neighbors is valley here.
+
+This program rearranges an given array as that mountain and valley stand alternately.
+
+```bash
+$ g++ mountain_and_valley1.cpp
+$ ./a.out
+# first input is length of array
+8
+# second input is array
+5 3 1 2 3 9 4 1
+# result
+9 1 5 1 4 2 3 3
+```
+
+mountain_and_valley1.cpp and mountain_and_valley2.cpp uses sort algorithm at first,
+so the performance cost depends on it, O(NlogN).
+
+mountain_and_valley3.cpp is more sophisticated, so it takes O(N) as performance cost.
