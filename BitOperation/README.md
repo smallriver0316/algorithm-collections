@@ -11,7 +11,7 @@ And inserted position is expressed with two parameters, i and j.
 They specifies bit position in N and the difference between i and j must be equal to the length of M.
 
 ```bash
-$ g++ insert.cpp
+$ g++ insert1.cpp
 $ ./a.out
 # first inputs are N and M
 65 9
