@@ -23,3 +23,20 @@ M: 1001
 # result
 1100101
 ```
+
+## Binary Expression of Decimal Number
+
+This program converts dicimal number into binary number expression.
+
+The input decimal is double type and it must be in range from 0 to 1.
+
+Furthermore, if the result cannot be expressed within 32 digits, the output will be "ERROR".
+
+```bash
+$ g++ binary_decimal1.cpp
+$ ./a.out
+# input: decimal number
+0.625
+# result: binary number
+.101
+```
