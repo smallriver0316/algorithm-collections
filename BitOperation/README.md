@@ -40,3 +40,39 @@ $ ./a.out
 # result: binary number
 .101
 ```
+
+## Best Inversion Position
+
+Given an integer, this program inverts only one bit from 0 to 1 in it,
+and outputs the maximum length of consecutive 1s.
+
+For example, 1775.
+
+- binary digit of 1775 is 11011101111
+- result is 8
+
+```bash
+$ g++ inversion_position1.cpp
+$ ./a.out
+# input; 1101110111
+1775
+# result
+8
+
+$ ./a.out
+# input; 1011001011001
+5721
+# result
+4
+```
+
+All of programs takes O(bit length) as performance cost, because they must scan all bit.
+
+inversion_position1.cpp records positions of 0 and calculates the longest consecutive 1s from them.
+So, it takes O(count of 0 bit) as memory cost.
+
+inversion_position2.cpp records lengthes of each consecutive same bits(0 or 1).
+
+inversion_position3.cpp is smarter than others.
+It scans bit sequence and keeps current length of 1 bit and previous one.
+It takes O(1) as memory cost.
