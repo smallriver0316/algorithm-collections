@@ -3,12 +3,26 @@ using namespace std;
 
 #define MAX_BIT_LEN 32
 
-int findFirstOneBit(int x)
+int findFirstOneBit(int x, int startIdx)
 {
-  int i = 0;
+  int i = startIdx;
   while ((x >> i) > 0)
   {
     if ((x >> i) & 1)
+    {
+      break;
+    }
+    i++;
+  }
+  return i;
+}
+
+int findFirstZeroBit(int x, int startIdx)
+{
+  int i = startIdx;
+  while ((x >> i) > 0)
+  {
+    if (((x >> i) & 1) == 0)
     {
       break;
     }
@@ -37,7 +51,7 @@ int countFirstOneBitSeq(int x, int startIdx)
 
 int upsideNumber(int x)
 {
-  int firstOneBitIdx = findFirstOneBit(x);
+  int firstOneBitIdx = findFirstOneBit(x, 0);
   int countFirstOneBits = countFirstOneBitSeq(x, firstOneBitIdx);
   int countFirstZeroBits = firstOneBitIdx;
   if (countFirstOneBits + firstOneBitIdx == MAX_BIT_LEN || countFirstOneBits == 0)
@@ -56,7 +70,8 @@ int upsideNumber(int x)
 
 int downsideNumber(int x)
 {
-  int firstOneBitIdx = findFirstOneBit(x);
+  int firstZeroBitIdx = findFirstZeroBit(x, 0);
+  int firstOneBitIdx = findFirstOneBit(x, firstZeroBitIdx + 1);
   int countFirstOneBits = countFirstOneBitSeq(x, firstOneBitIdx);
   if (countFirstOneBits + firstOneBitIdx == MAX_BIT_LEN || countFirstOneBits == 0)
   {
@@ -76,7 +91,14 @@ int main()
   cout << "Upside: " << up << endl;
 
   down = downsideNumber(x);
-  cout << "Downside: " << down << endl;
+  if (down == -1)
+  {
+    cout << "Downside is None" << endl;
+  }
+  else
+  {
+    cout << "Downside: " << down << endl;
+  }
 
   return 0;
 }
