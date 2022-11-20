@@ -76,3 +76,22 @@ inversion_position2.cpp records lengthes of each consecutive same bits(0 or 1).
 inversion_position3.cpp is smarter than others.
 It scans bit sequence and keeps current length of 1 bit and previous one.
 It takes O(1) as memory cost.
+
+## Adjacent Number
+
+Given an integer, this program outputs the next and the previous number against it.
+But these outputs must have the same number of "1" bits.
+
+```bash
+$ g++ adjacent_number1.cpp
+$ ./a.out
+# input number (10 = 1010b)
+10
+# result
+# 12 = 1100b
+Upside: 12
+# 9 = 1001b
+Downside: 9
+```
+
+adjacent_number2.cpp tries to solve this problem with more arithmetic method.
