@@ -95,3 +95,23 @@ Downside: 9
 ```
 
 adjacent_number2.cpp tries to solve this problem with more arithmetic method.
+
+## Bit Conversion
+
+When two integer given, this program calculates how many bits are required to convert one to another.
+It means how many differences there are between the two intergers in bit sequence.
+
+This operation is very easy,
+so here implements various methods to solve this problem.
+
+```bash
+$ g++ bit_conversion.cpp
+$ ./a.out
+# first inptus are two intergers
+29 15
+# results from each implementations
+2
+2
+2
+2
+```
