@@ -115,3 +115,26 @@ $ ./a.out
 2
 2
 ```
+
+## Exchange of Bit Pair
+
+This program trys to exchange two bits in a pair with the fewest operations possibly.
+
+Here, the pair means pair of even bit and odd bit,
+for example, 1st and 2nd bit, 3rd bit and 4th bit, ....
+
+```bash
+$ exchange_bit_pair1.cpp
+$ ./a.out
+# input
+34173
+# output bit sequence of input
+input: 1000010101111101
+# result of exchange
+19134
+# bit sequence after exchanged
+output: 100101010111110
+```
+
+exchange_bit_pair2.cpp uses a more effective way than exchange_bit_pair1.cpp.
+It executes only 5 operations to solve this problem.
