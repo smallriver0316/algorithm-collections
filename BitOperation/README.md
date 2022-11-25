@@ -138,3 +138,36 @@ output: 100101010111110
 
 exchange_bit_pair2.cpp uses a more effective way than exchange_bit_pair1.cpp.
 It executes only 5 operations to solve this problem.
+
+## Draw Line
+
+This program draw a horizontal line in a screen.
+
+The screen colors are only black and white,
+and the all pixels are stored as byte array of single dimension.
+1 byte contains 8 pixels.
+
+The width of screen must be multiple of 8.
+So, pixels won't be wrapped at the middle of byte.
+
+In this situation, this program draw a line from (x1, y) to (x2, y).
+
+Here, the number of pixels are set as 320.
+
+```bash
+$ draw_line.cpp
+$ ./a.out
+# input; width, x1, x2, y
+32 5 25 6
+# result
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000111111111111111111111000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+```
